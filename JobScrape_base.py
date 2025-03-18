@@ -4,7 +4,7 @@ import time
 import requests
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
-from constants import JSEARCH_API, EMAIL, EMAIL_PASSWORD
+from config import JSEARCH_API, EMAIL, EMAIL_PASSWORD
 
 # -------------------
 # JSearch API Configuration
