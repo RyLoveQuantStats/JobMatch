@@ -1,0 +1,58 @@
+RYAN M. LOVELESS
+1421 James Way Erie, CO 80516  |  720-561-0071
+LovelessRyanMitchell@Gmail.com  |  Github.com/RyLoveQuantStats  |  linkedin.com/in/ryanmloveless
+________________________________________
+PROFESSIONAL SUMMARY
+Quantitative trader and algorithmic developer with expertise in futures, cryptocurrencies, and equities. Proven track record in building and optimizing medium-frequency trading strategies that generate consistent returns across various asset classes. Founder of RyLove Quantitative Statistics, mentoring traders and leveraging data-driven decision-making. Strong background in python development for finding alphas with machine learning, risk management, and advanced statistical analysis
+________________________________________
+EDUCATION
+University of Colorado at Boulder – Leeds School of Business 		       	          May 2025
+Master of Science in Finance – Financial Data Track					           GPA: 3.9           
+Relevant Coursework: Quantitative Methods in R, Textual Analysis in Python, Applied Derivatives
+
+Missouri State University, Springfield, MO						          Dec 2018
+Bachelor of Science in Cell and Molecular Biology, Biochemistry Minor			           GPA: 3.5 
+Relevant Coursework: Computational Calculus, Statistics in Biology, Physics I/II     
+________________________________________
+PROFESSIONAL EXPERIENCE
+RyLove Quantitative Statistics, LLC						   March 2021 – Present
+Founder, Quantitative Researcher & Trader						 Sioux Falls, SD
+•	Designed, developed, and executed medium-frequency trading algorithms across futures, cryptocurrencies, equities, and commodities, leveraging Python, R, and Pine Script to generate consistent, alpha-driven returns.
+•	Integrated a comprehensive Python quant stack, including NumPy, SciPy, pandas, statsmodels, PyCaret, and TensorFlow, for numerical computing, data visualization, machine learning, and model optimization to enhance trading strategies and research outcomes.
+•	Developed and deployed systematic backtesting frameworks using tools like Zipline and Interactive Broker APIs to rigorously evaluate strategies, optimize Sharpe ratios, and ensure robust execution in high-volatility environments.
+•	Engineered machine learning-powered risk management systems in Python, utilizing libraries such as Pyfolio, Alphlens, and Riskfolio-Lib, to dynamically adjust position sizing and hedge portfolio risk in real-time.
+•	Mentored and led a team of traders, teaching advanced quantitative trading techniques and implementing automated workflows to improve execution efficiency and market engagement.
+•	Conducted in-depth quantitative market analysis in R, using statistical models and tools to identify profitable trading opportunities and validate hypotheses prior to live deployment.
+•	Integrated data visualization tools like Matplotlib and Seaborn for performance analysis and real-time strategy monitoring, enhancing transparency and decision-making.
+
+Poseida Therapeutics 								         Sept ’22 – Aug ‘23
+Gene Therapy Research Associate II							  San Diego, CA
+
+•	Designed and executed quantitative models in Python and R to analyze gene therapy data sets, optimizing experimental designs and increasing assay efficiency.
+•	Developed automated Excel dashboards to analyze large-scale molecular biology datasets, improving data processing time by 30% for molecular biology ddPCR and qPCR assays.
+•	Applied statistical analysis in R to identify trends in qPCR/ddPCR and Western Blot data, ensuring experimental consistency and accuracy.
+•	Built models using Python and visualization in GraphPad Prism to analyze tissue pharmacokinetics, improving accuracy in mRNA and vector copy number (VCN) quantification.
+•	Utilized SQL and LIMS (Laboratory Information Management Systems) for data management and retrieval, ensuring streamlined workflows and traceability.
+
+Inscripta Inc. 									        Dec. ’21 – Sept ‘22     
+Next Generation Sequencing Research Associate					                  Boulder, CO
+
+•	Developed R-based scripts to clean and analyze next-generation sequencing (NGS) data, improving error detection and batch consistency.
+•	Applied Python and Excel VBA automation to streamline data pipeline workflows, reducing manual processing time for sequencing results by 40%.
+•	Visualized large genomic datasets using Python’s Matplotlib and Seaborn, identifying key trends in E. coli gene knockdown experiments.
+•	Implemented statistical quality control methods in R to optimize nucleic acid extraction and library preparation protocols.
+•	Collaborated with the NGS Core Team to troubleshoot and improve data analysis workflows, ensuring accuracy in high-throughput sequencing experiments.
+________________________________________
+SKILLS
+•	Software Proficiency: Python, R, SQL, Pine Script 
+•	Trading Platforms: Bloomberg, FactSet, NinjaTrader, MetaTrader, Fidelity Active Trader Pro, TradingView, Interactive Brokers API
+•	Technicals: 
+•	High & Medium-Frequency Algorithmic Trading in Python 
+•	Statistical Analysis in R, Data Management in SQL 
+•	Machine Learning in Python (inspired by Advances in Financial Machine Learning – López de Prado) 
+•	Certifications & Self-Study: 
+•	Bloomberg Market Concepts; Microsoft Excel Expert
+•	Python for Financial Analysis & Algorithmic Trading (Udemy), Python for Data Science and Machine Learning (Udemy), SQL for Data Science (Coursera)
+•	Applied concepts from Python for Algorithmic Trading Cookbook (E. Chan), Finding Alpha (E. Dubofsky), Options Volatility & Pricing (S. Natenberg) in developing systematic trading strategies.
+•	Interests: Finding alpha, outdoor rock climbing, fly fishing, studying for CFA Level 1
+•	Achievements: Ranked in the top 5% globally in the 2024 Bloomberg Equity Trading Challenge
