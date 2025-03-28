@@ -4,10 +4,12 @@ import os
 
 # Database configuration
 DATABASE_FILE = 'data.db'
-SCHEMA_FILE = 'schema.sql'
+# Get the base directory where config.py is located.
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SCHEMA_FILE = os.path.join(BASE_DIR, 'database', 'schema.sql')
 
 # Logging configuration
-LOG_DIR = os.path.join(os.getcwd(), 'logs')
+LOG_DIR = os.path.join(BASE_DIR, 'logs')
 LOG_FILE = 'app.log'
 LOG_LEVEL = 'INFO'
 
