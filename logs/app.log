@@ -509,3 +509,77 @@
 2025-03-28 20:49:25,823 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
 2025-03-28 20:49:25,824 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
 2025-03-28 20:49:48,329 - root - INFO - Validation complete.
+2025-03-28 20:51:59,173 - root - INFO - Table 'parser_results' created or already exists.
+2025-03-28 20:54:04,287 - root - INFO - Table 'parser_results' created or already exists.
+2025-03-28 20:54:08,155 - root - INFO - Saved 10 TF-IDF parser results for job_id 2.
+2025-03-28 20:54:08,176 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 20:54:08,177 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 20:54:11,091 - root - INFO - Saved 10 SBERT parser results for job_id 2.
+2025-03-28 20:54:16,401 - root - INFO - Validation complete.
+2025-03-28 20:57:30,813 - scripts.tfidf_parser - INFO - Computed TF-IDF similarity scores for 12 jobs.
+2025-03-28 20:57:30,816 - scripts.tfidf_parser - INFO - Updated TF-IDF similarity scores for 12 jobs.
+2025-03-28 20:57:30,818 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 20:57:30,820 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 20:57:30,821 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 20:57:31,999 - root - INFO - Computed SBERT similarity scores for 12 jobs.
+2025-03-28 20:57:32,000 - root - INFO - Updated SBERT similarity scores for 12 jobs.
+2025-03-28 20:57:35,383 - root - INFO - Saved 10 TF-IDF parser results for job_id 2.
+2025-03-28 20:57:35,389 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 20:57:35,389 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 20:57:36,935 - root - INFO - Saved 10 SBERT parser results for job_id 2.
+2025-03-28 20:57:38,828 - root - INFO - Validation complete.
+2025-03-28 21:05:43,589 - root - INFO - Table 'parser_results' created or already exists.
+2025-03-28 21:05:47,316 - root - INFO - Saved 10 TF-IDF parser results for job_id 2.
+2025-03-28 21:05:47,329 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 21:05:47,330 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 21:05:48,993 - root - INFO - Saved 10 SBERT parser results for job_id 2.
+2025-03-28 21:06:40,688 - root - INFO - Validation complete.
+2025-03-28 21:09:28,506 - scripts.tfidf_parser - INFO - Computed TF-IDF similarity scores for 12 jobs.
+2025-03-28 21:09:28,507 - scripts.tfidf_parser - INFO - Updated TF-IDF similarity scores for 12 jobs.
+2025-03-28 21:09:28,507 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 21:09:28,509 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 21:09:28,509 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 21:09:29,685 - root - INFO - Computed SBERT similarity scores for 12 jobs.
+2025-03-28 21:09:29,686 - root - INFO - Updated SBERT similarity scores for 12 jobs.
+2025-03-28 21:09:38,684 - root - INFO - Saved 10 TF-IDF parser results for job_id 2.
+2025-03-28 21:09:38,693 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 21:09:38,693 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 21:09:40,270 - root - INFO - Saved 10 SBERT parser results for job_id 2.
+2025-03-28 21:09:42,248 - root - INFO - Validation complete.
+2025-03-28 21:14:13,786 - scripts.tfidf_parser - INFO - Computed TF-IDF similarity scores for 12 jobs.
+2025-03-28 21:14:13,787 - scripts.tfidf_parser - INFO - Updated TF-IDF similarity scores for 12 jobs.
+2025-03-28 21:14:13,788 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 21:14:13,791 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 21:14:13,792 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 21:14:15,092 - root - INFO - Computed SBERT similarity scores for 12 jobs.
+2025-03-28 21:14:15,093 - root - INFO - Updated SBERT similarity scores for 12 jobs.
+2025-03-28 21:14:15,094 - root - INFO - Table 'parser_results' created or already exists.
+2025-03-28 21:14:19,954 - root - INFO - Saved 10 TF-IDF parser results for job_id 2.
+2025-03-28 21:14:19,960 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 21:14:19,962 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 21:14:21,480 - root - INFO - Saved 10 SBERT parser results for job_id 2.
+2025-03-28 21:14:23,040 - root - INFO - Validation complete.
+2025-03-28 21:15:03,589 - scripts.tfidf_parser - INFO - Computed TF-IDF similarity scores for 12 jobs.
+2025-03-28 21:15:03,590 - scripts.tfidf_parser - INFO - Updated TF-IDF similarity scores for 12 jobs.
+2025-03-28 21:15:03,591 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 21:15:03,592 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 21:15:03,593 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 21:15:04,768 - root - INFO - Computed SBERT similarity scores for 12 jobs.
+2025-03-28 21:15:04,768 - root - INFO - Updated SBERT similarity scores for 12 jobs.
+2025-03-28 21:15:08,367 - root - INFO - Saved 10 TF-IDF parser results for job_id 2.
+2025-03-28 21:15:08,373 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 21:15:08,373 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 21:15:10,189 - root - INFO - Saved 10 SBERT parser results for job_id 2.
+2025-03-28 21:15:11,812 - root - INFO - Validation complete.
+2025-03-28 21:15:11,816 - root - INFO - Table 'parser_results' created or already exists.
+2025-03-28 21:15:17,810 - root - INFO - Saved 10 TF-IDF parser results for job_id 2.
+2025-03-28 21:15:17,819 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 21:15:17,819 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 21:15:19,427 - root - INFO - Saved 10 SBERT parser results for job_id 2.
+2025-03-28 21:15:20,889 - root - INFO - Validation complete.
+2025-03-28 21:15:40,891 - root - INFO - Table 'parser_results' created or already exists.
+2025-03-28 21:15:47,446 - root - INFO - Saved 10 TF-IDF parser results for job_id 2.
+2025-03-28 21:15:47,455 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 21:15:47,456 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 21:15:48,983 - root - INFO - Saved 10 SBERT parser results for job_id 2.
+2025-03-28 21:15:50,947 - root - INFO - Validation complete.
