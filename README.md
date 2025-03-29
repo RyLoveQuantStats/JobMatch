@@ -1,4 +1,3 @@
-```markdown
 # Finance Job Scraping & Forecasting System
 
 ## Overview
