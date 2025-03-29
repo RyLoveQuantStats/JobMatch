@@ -473,3 +473,39 @@
 2025-03-28 19:56:55,937 - root - WARNING - Rate limit hit on /estimated-salary. Waiting for 5 seconds...
 2025-03-28 19:57:01,132 - root - WARNING - Rate limit hit on /estimated-salary. Waiting for 5 seconds...
 2025-03-28 19:57:06,313 - root - WARNING - Rate limit hit on /company-job-salary. Waiting for 5 seconds...
+2025-03-28 19:59:26,013 - numexpr.utils - INFO - Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2025-03-28 19:59:26,014 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2025-03-28 19:59:37,462 - scripts.tfidf_parser - INFO - Computed TF-IDF similarity scores for 12 jobs.
+2025-03-28 19:59:37,463 - scripts.tfidf_parser - INFO - Updated TF-IDF similarity scores for 12 jobs.
+2025-03-28 19:59:37,464 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 19:59:37,467 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 19:59:37,467 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 19:59:39,441 - root - INFO - Computed SBERT similarity scores for 12 jobs.
+2025-03-28 19:59:39,442 - root - INFO - Updated SBERT similarity scores for 12 jobs.
+2025-03-28 19:59:52,540 - root - INFO - Validation complete.
+2025-03-28 20:06:43,646 - scripts.tfidf_parser - INFO - Computed TF-IDF similarity scores for 12 jobs.
+2025-03-28 20:06:43,649 - scripts.tfidf_parser - INFO - Updated TF-IDF similarity scores for 12 jobs.
+2025-03-28 20:06:43,652 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 20:06:43,713 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 20:06:43,713 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 20:06:45,674 - root - INFO - Computed SBERT similarity scores for 12 jobs.
+2025-03-28 20:06:45,675 - root - INFO - Updated SBERT similarity scores for 12 jobs.
+2025-03-28 20:06:50,311 - root - INFO - Validation complete.
+2025-03-28 20:22:33,892 - root - INFO - Validation complete.
+2025-03-28 20:33:26,866 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 20:33:26,868 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 20:33:34,997 - root - INFO - Validation complete.
+2025-03-28 20:39:45,651 - scripts.tfidf_parser - INFO - Computed TF-IDF similarity scores for 12 jobs.
+2025-03-28 20:39:45,657 - scripts.tfidf_parser - INFO - Updated TF-IDF similarity scores for 12 jobs.
+2025-03-28 20:39:45,658 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 20:39:45,660 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 20:39:45,660 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 20:39:47,562 - root - INFO - Computed SBERT similarity scores for 12 jobs.
+2025-03-28 20:39:47,563 - root - INFO - Updated SBERT similarity scores for 12 jobs.
+2025-03-28 20:39:53,160 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 20:39:53,160 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 20:39:56,527 - root - INFO - Validation complete.
+2025-03-28 20:49:21,862 - root - INFO - Table 'parser_results' created or already exists.
+2025-03-28 20:49:25,823 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 20:49:25,824 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 20:49:48,329 - root - INFO - Validation complete.
