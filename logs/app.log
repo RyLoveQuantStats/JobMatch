@@ -380,3 +380,21 @@
 2025-03-28 19:03:13,052 - root - INFO - Jobs table created or already exists.
 2025-03-28 19:03:16,774 - root - INFO - Found 10 jobs for query 'quantitative trading'.
 2025-03-28 19:03:56,400 - root - INFO - Job scraping and endpoint extraction complete.
+2025-03-28 19:09:23,595 - numexpr.utils - INFO - Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2025-03-28 19:09:23,597 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2025-03-28 19:09:30,033 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 19:09:30,034 - root - INFO - Running job scraping module...
+2025-03-28 19:09:30,034 - root - INFO - Starting job scraping using all JSearch endpoints...
+2025-03-28 19:09:30,043 - root - INFO - Jobs table created or already exists.
+2025-03-28 19:09:33,132 - root - INFO - Found 10 jobs for query 'quantitative trading'.
+2025-03-28 19:10:11,466 - root - INFO - Job scraping and endpoint extraction complete.
+2025-03-28 19:10:11,466 - root - INFO - Updating TF-IDF similarity scores...
+2025-03-28 19:10:11,492 - root - INFO - Computed TF-IDF similarity scores for 10 jobs.
+2025-03-28 19:10:11,503 - root - INFO - Updated TF-IDF similarity scores for 10 jobs.
+2025-03-28 19:10:11,503 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 19:10:11,506 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 19:10:11,509 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 19:10:11,509 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 19:10:15,329 - root - INFO - Computed SBERT similarity scores for 10 jobs.
+2025-03-28 19:10:15,338 - root - INFO - Updated SBERT similarity scores for 10 jobs.
+2025-03-28 19:10:15,339 - root - INFO - Pipeline complete.
