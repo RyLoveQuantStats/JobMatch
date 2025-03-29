@@ -14,8 +14,7 @@ LOG_FILE = 'app.log'
 LOG_LEVEL = 'INFO'
 
 # API keys and endpoints (placeholders, update with your actual keys)
-JSEARCH_API = "22d7e554a0msh4b5224dbea1a4dbp1baac7jsn2197588dd568"
-YFINANCE_API_KEY = 'YOUR_YFINANCE_API_KEY'
+JSEARCH_API = "16c7f72bd6mshf7c7c426eddf90bp173935jsn9286538f70b0"
 
 
 
