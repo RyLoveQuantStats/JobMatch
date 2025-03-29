@@ -4,16 +4,20 @@ Directory structure:
     ├── data.db
     ├── main.py
     ├── requirements.txt
+    ├── resume.txt
     ├── database/
     │   ├── __init__.py
     │   ├── db_manager.py
-    │   ├── schema.sql
     │   └── __pycache__/
     ├── docs/
     │   ├── Project Duties.docx
     │   └── Project Outline.docx
+    ├── logs/
     ├── scripts/
     │   ├── job_scrape.py
+    │   ├── sbert_parser.py
+    │   ├── tfidf_parser.py
+    │   ├── __pycache__/
     │   └── .git/
     │       ├── COMMIT_EDITMSG
     │       ├── FETCH_HEAD
@@ -84,10 +88,12 @@ import os
 
 # Database configuration
 DATABASE_FILE = 'data.db'
-SCHEMA_FILE = os.path.join(os.getcwd(), 'database', 'schema.sql')
+# Get the base directory where config.py is located.
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SCHEMA_FILE = os.path.join(BASE_DIR, 'database', 'schema.sql')
 
 # Logging configuration
-LOG_DIR = os.path.join(os.getcwd(), 'logs')
+LOG_DIR = os.path.join(BASE_DIR, 'logs')
 LOG_FILE = 'app.log'
 LOG_LEVEL = 'INFO'
 
@@ -104,12 +110,81 @@ YFINANCE_API_KEY = 'YOUR_YFINANCE_API_KEY'
 ================================================
 File: data.db
 ================================================
-
+[Non-text file]
 
 
 ================================================
 File: main.py
 ================================================
+#!/usr/bin/env python3
+import os
+import logging
+import sqlite3
+
+from config import DATABASE_FILE
+from scripts.job_scrape import main as scrape_jobs_main
+from scripts.tfidf_parser import parse_resume_and_match  # Your TFâ€‘IDF parser function
+from scripts.sbert_parser import update_sbert_similarity  # Your SBERT updater function
+from utils.logging import setup_logging
+
+# Set up logging.
+logger = setup_logging()
+
+def update_tfidf_similarity(resume_path, db_file):
+    """
+    Retrieves all job descriptions from the jobs table, computes TFâ€‘IDF similarity
+    scores against the resume, and updates each job record with the TFâ€‘IDF similarity score.
+    """
+    try:
+        conn = sqlite3.connect(db_file)
+        cur = conn.cursor()
+        # Retrieve job_id and description for all jobs.
+        cur.execute("SELECT job_id, description FROM jobs")
+        jobs = cur.fetchall()
+        if not jobs:
+            logger.info("No job entries found to update TFâ€‘IDF similarity scores.")
+            return
+
+        # Separate job IDs and descriptions.
+        job_ids = [job_id for job_id, _ in jobs]
+        job_texts = [desc for _, desc in jobs]
+
+        # Compute similarity scores using the TFâ€‘IDF parser.
+        similarity_scores = parse_resume_and_match(resume_path, job_texts)
+        logger.info("Computed TFâ€‘IDF similarity scores for %d jobs.", len(similarity_scores))
+
+        # Update each job record with the corresponding similarity score.
+        for job_id, score in zip(job_ids, similarity_scores):
+            cur.execute("UPDATE jobs SET similarity_score = ? WHERE job_id = ?", (score, job_id))
+        conn.commit()
+        logger.info("Updated TFâ€‘IDF similarity scores for %d jobs.", len(job_ids))
+    except sqlite3.Error as e:
+        logger.error("Error updating TFâ€‘IDF similarity scores: %s", e)
+    finally:
+        if conn:
+            conn.close()
+
+def main():
+    logger.info("Starting the full job scraping and resume matching pipeline...")
+    
+    # Step 1: Run the job scraping module (creates jobs table and inserts job postings).
+    scrape_jobs_main()
+    
+    # Path to your resume file.
+    resume_path = os.path.join(os.getcwd(), "resume.txt")
+    
+    # Step 2: Update TFâ€‘IDF similarity scores.
+    logger.info("Updating TFâ€‘IDF similarity scores...")
+    update_tfidf_similarity(resume_path, DATABASE_FILE)
+    
+    # Step 3: Update SBERT similarity scores.
+    logger.info("Updating SBERT similarity scores...")
+    update_sbert_similarity(DATABASE_FILE, resume_path)
+    
+    logger.info("Pipeline complete.")
+
+if __name__ == "__main__":
+    main()
 
 
 
@@ -117,6 +192,70 @@ File: main.py
 File: requirements.txt
 ================================================
 [Non-text file]
+
+
+================================================
+File: resume.txt
+================================================
+RYAN M. LOVELESS
+1421 James Way Erie, CO 80516  |  720-561-0071
+LovelessRyanMitchell@Gmail.com  |  Github.com/RyLoveQuantStats  |  linkedin.com/in/ryanmloveless
+________________________________________
+PROFESSIONAL SUMMARY
+Quantitative trader and algorithmic developer with expertise in futures, cryptocurrencies, and equities. Proven track record in building and optimizing medium-frequency trading strategies that generate consistent returns across various asset classes. Founder of RyLove Quantitative Statistics, mentoring traders and leveraging data-driven decision-making. Strong background in python development for finding alphas with machine learning, risk management, and advanced statistical analysis
+________________________________________
+EDUCATION
+University of Colorado at Boulder â€“ Leeds School of Business 		       	          May 2025
+Master of Science in Finance â€“ Financial Data Track					           GPA: 3.9           
+Relevant Coursework: Quantitative Methods in R, Textual Analysis in Python, Applied Derivatives
+
+Missouri State University, Springfield, MO						          Dec 2018
+Bachelor of Science in Cell and Molecular Biology, Biochemistry Minor			           GPA: 3.5 
+Relevant Coursework: Computational Calculus, Statistics in Biology, Physics I/II     
+________________________________________
+PROFESSIONAL EXPERIENCE
+RyLove Quantitative Statistics, LLC						   March 2021 â€“ Present
+Founder, Quantitative Researcher & Trader						 Sioux Falls, SD
+â€¢	Designed, developed, and executed medium-frequency trading algorithms across futures, cryptocurrencies, equities, and commodities, leveraging Python, R, and Pine Script to generate consistent, alpha-driven returns.
+â€¢	Integrated a comprehensive Python quant stack, including NumPy, SciPy, pandas, statsmodels, PyCaret, and TensorFlow, for numerical computing, data visualization, machine learning, and model optimization to enhance trading strategies and research outcomes.
+â€¢	Developed and deployed systematic backtesting frameworks using tools like Zipline and Interactive Broker APIs to rigorously evaluate strategies, optimize Sharpe ratios, and ensure robust execution in high-volatility environments.
+â€¢	Engineered machine learning-powered risk management systems in Python, utilizing libraries such as Pyfolio, Alphlens, and Riskfolio-Lib, to dynamically adjust position sizing and hedge portfolio risk in real-time.
+â€¢	Mentored and led a team of traders, teaching advanced quantitative trading techniques and implementing automated workflows to improve execution efficiency and market engagement.
+â€¢	Conducted in-depth quantitative market analysis in R, using statistical models and tools to identify profitable trading opportunities and validate hypotheses prior to live deployment.
+â€¢	Integrated data visualization tools like Matplotlib and Seaborn for performance analysis and real-time strategy monitoring, enhancing transparency and decision-making.
+
+Poseida Therapeutics 								         Sept â€™22 â€“ Aug â€˜23
+Gene Therapy Research Associate II							  San Diego, CA
+
+â€¢	Designed and executed quantitative models in Python and R to analyze gene therapy data sets, optimizing experimental designs and increasing assay efficiency.
+â€¢	Developed automated Excel dashboards to analyze large-scale molecular biology datasets, improving data processing time by 30% for molecular biology ddPCR and qPCR assays.
+â€¢	Applied statistical analysis in R to identify trends in qPCR/ddPCR and Western Blot data, ensuring experimental consistency and accuracy.
+â€¢	Built models using Python and visualization in GraphPad Prism to analyze tissue pharmacokinetics, improving accuracy in mRNA and vector copy number (VCN) quantification.
+â€¢	Utilized SQL and LIMS (Laboratory Information Management Systems) for data management and retrieval, ensuring streamlined workflows and traceability.
+
+Inscripta Inc. 									        Dec. â€™21 â€“ Sept â€˜22     
+Next Generation Sequencing Research Associate					                  Boulder, CO
+
+â€¢	Developed R-based scripts to clean and analyze next-generation sequencing (NGS) data, improving error detection and batch consistency.
+â€¢	Applied Python and Excel VBA automation to streamline data pipeline workflows, reducing manual processing time for sequencing results by 40%.
+â€¢	Visualized large genomic datasets using Pythonâ€™s Matplotlib and Seaborn, identifying key trends in E. coli gene knockdown experiments.
+â€¢	Implemented statistical quality control methods in R to optimize nucleic acid extraction and library preparation protocols.
+â€¢	Collaborated with the NGS Core Team to troubleshoot and improve data analysis workflows, ensuring accuracy in high-throughput sequencing experiments.
+________________________________________
+SKILLS
+â€¢	Software Proficiency: Python, R, SQL, Pine Script 
+â€¢	Trading Platforms: Bloomberg, FactSet, NinjaTrader, MetaTrader, Fidelity Active Trader Pro, TradingView, Interactive Brokers API
+â€¢	Technicals: 
+â€¢	High & Medium-Frequency Algorithmic Trading in Python 
+â€¢	Statistical Analysis in R, Data Management in SQL 
+â€¢	Machine Learning in Python (inspired by Advances in Financial Machine Learning â€“ LÃ³pez de Prado) 
+â€¢	Certifications & Self-Study: 
+â€¢	Bloomberg Market Concepts; Microsoft Excel Expert
+â€¢	Python for Financial Analysis & Algorithmic Trading (Udemy), Python for Data Science and Machine Learning (Udemy), SQL for Data Science (Coursera)
+â€¢	Applied concepts from Python for Algorithmic Trading Cookbook (E. Chan), Finding Alpha (E. Dubofsky), Options Volatility & Pricing (S. Natenberg) in developing systematic trading strategies.
+â€¢	Interests: Finding alpha, outdoor rock climbing, fly fishing, studying for CFA Level 1
+â€¢	Achievements: Ranked in the top 5% globally in the 2024 Bloomberg Equity Trading Challenge
+
 
 
 ================================================
@@ -206,53 +345,6 @@ class DBManager:
 
 
 
-================================================
-File: database/schema.sql
-================================================
--- schema.sql
-
--- Table for storing job postings scraped from the JSearch API.
-CREATE TABLE IF NOT EXISTS jobs (
-    job_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT NOT NULL,
-    company TEXT NOT NULL,
-    location TEXT,
-    description TEXT,
-    ticker TEXT,
-    posted_date TEXT,       -- ISO date string (YYYY-MM-DD) if available
-    scraped_date TEXT DEFAULT (datetime('now')), -- Timestamp when the job was scraped
-    similarity_score REAL   -- Placeholder for resume-job matching score (to be computed later)
-);
-
--- Table for storing company details using data from the YFinance API.
-CREATE TABLE IF NOT EXISTS companies (
-    company_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    ticker TEXT UNIQUE,
-    sector TEXT,
-    industry TEXT
-);
-
--- Optional table for storing keywords extracted from your resume.
--- This can be used later for resume-job matching using NLP techniques.
-CREATE TABLE IF NOT EXISTS resume_keywords (
-    keyword_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    keyword TEXT NOT NULL,
-    frequency INTEGER DEFAULT 0
-);
-
--- Optional table for storing forecasting results.
--- This table is designed to capture predicted job trends by sector and date.
-CREATE TABLE IF NOT EXISTS job_forecasts (
-    forecast_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    sector TEXT,
-    forecast_date TEXT,     -- Date for which the forecast applies
-    predicted_jobs INTEGER, -- Predicted number of job postings
-    created_at TEXT DEFAULT (datetime('now'))
-);
-
-
-
 
 ================================================
 File: docs/Project Duties.docx
@@ -266,6 +358,7 @@ File: docs/Project Outline.docx
 [Non-text file]
 
 
+
 ================================================
 File: scripts/job_scrape.py
 ================================================
@@ -273,9 +366,13 @@ File: scripts/job_scrape.py
 import os
 import time
 import requests
+import sqlite3
+import logging
 
-from config import JSEARCH_API, DATABASE_FILE  # Removed EMAIL and EMAIL_PASSWORD
-from database.db_manager import DBManager
+from config import JSEARCH_API, DATABASE_FILE
+from utils.logging import setup_logging
+
+logger = setup_logging()
 
 # -------------------
 # JSearch API Configuration
@@ -288,22 +385,51 @@ HEADERS = {
 }
 
 # -------------------
-# Job Search Parameters
-# -------------------
-SEARCH_QUERIES = [
-    "quantitative trading"
-]
-SEARCH_LOCATION = "us"
-NUM_PAGES = 1
-
-# -------------------
 # Retry Configuration
 # -------------------
 MAX_RETRIES = 3
 RETRY_DELAY = 5  # seconds
 
 # -------------------
-# Helper Functions
+# Database Schema: Jobs Table (extended)
+# -------------------
+JOBS_TABLE_SQL = """
+CREATE TABLE IF NOT EXISTS jobs (
+    job_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    jsearch_job_id TEXT UNIQUE,   -- Unique job ID from JSearch
+    title TEXT NOT NULL,
+    company TEXT NOT NULL,
+    location TEXT,
+    description TEXT,
+    ticker TEXT,
+    posted_date TEXT,
+    scraped_date TEXT DEFAULT (datetime('now')),
+    similarity_score REAL,
+    similarity_score_sbert REAL,
+    details TEXT,               -- JSON from /job-details
+    estimated_salary TEXT,      -- JSON from /estimated-salary
+    company_salary TEXT         -- JSON from /company-job-salary
+);
+"""
+
+def initialize_jobs_table(db_file):
+    """
+    Create the jobs table if it does not exist.
+    """
+    try:
+        conn = sqlite3.connect(db_file)
+        cur = conn.cursor()
+        cur.execute(JOBS_TABLE_SQL)
+        conn.commit()
+        logger.info("Jobs table created or already exists.")
+    except sqlite3.Error as e:
+        logger.error("Error creating jobs table: %s", e)
+    finally:
+        if conn:
+            conn.close()
+
+# -------------------
+# General API Call Function
 # -------------------
 def call_api(endpoint, params):
     """
@@ -313,89 +439,385 @@ def call_api(endpoint, params):
         try:
             response = requests.get(BASE_URL + endpoint, headers=HEADERS, params=params)
             if response.status_code == 429:
-                print("Rate limit hit (429). Waiting for {} seconds...".format(RETRY_DELAY))
+                logger.warning("Rate limit hit on %s. Waiting for %s seconds...", endpoint, RETRY_DELAY)
                 time.sleep(RETRY_DELAY)
                 continue
             elif response.status_code != 200:
-                print(f"Error: Received status code {response.status_code} for params: {params}")
+                logger.error("Error: Received status code %s for endpoint %s with params: %s", 
+                             response.status_code, endpoint, params)
                 return None
             return response
         except Exception as e:
-            print("Exception during API call:", e)
+            logger.exception("Exception during API call to %s: %s", endpoint, e)
             time.sleep(RETRY_DELAY)
     return None
 
-def search_jobs(query, location=SEARCH_LOCATION, num_pages=NUM_PAGES):
+# -------------------
+# Endpoint-Specific Functions
+# -------------------
+def search_jobs(query, location="us", page=1, num_pages=1):
     """
-    Searches for jobs using the JSearch API's /search endpoint.
+    Calls the /search endpoint to search for jobs.
+    Returns a list of job objects.
     """
     endpoint = "/search"
-    all_jobs = []
-    for page in range(1, num_pages + 1):
-        params = {
-            "query": query,
-            "page": page,
-            "num_pages": num_pages,
-            "location": location
-        }
-        response = call_api(endpoint, params)
-        if response is None:
-            print(f"Failed to get results for query '{query}', page {page}.")
-            continue
-
+    params = {
+        "query": query,
+        "location": location,
+        "page": page,
+        "num_pages": num_pages
+    }
+    response = call_api(endpoint, params)
+    if response:
         try:
             json_response = response.json()
+            if json_response.get("status") != "OK":
+                logger.error("API error in /search: %s", json_response.get("error"))
+                return []
+            return json_response.get("data", [])
         except Exception as e:
-            print("Error decoding JSON:", e)
-            continue
+            logger.exception("Error parsing JSON from /search: %s", e)
+    return []
 
-        if json_response.get("status") != "OK":
-            error_message = json_response.get("error", {}).get("message", "Unknown error")
-            print(f"API error for query '{query}', page {page}: {error_message}")
-            continue
+def get_job_details(job_id):
+    """
+    Calls the /job-details endpoint for a given job_id.
+    Returns a dictionary with job details.
+    """
+    endpoint = "/job-details"
+    params = {"job_id": job_id}
+    response = call_api(endpoint, params)
+    if response:
+        try:
+            json_response = response.json()
+            if json_response.get("status") != "OK":
+                logger.error("API error in /job-details: %s", json_response.get("error"))
+                return {}
+            return json_response.get("data", {})
+        except Exception as e:
+            logger.exception("Error parsing JSON from /job-details: %s", e)
+    return {}
 
-        jobs = json_response.get("data", [])
-        all_jobs.extend(jobs)
-    return all_jobs
+def get_estimated_salary(job_title, location="us"):
+    """
+    Calls the /estimated-salary endpoint for a given job title and location.
+    Returns a dictionary with salary info.
+    """
+    endpoint = "/estimated-salary"
+    params = {
+        "job_title": job_title,
+        "location": location
+    }
+    response = call_api(endpoint, params)
+    if response:
+        try:
+            json_response = response.json()
+            if json_response.get("status") != "OK":
+                logger.error("API error in /estimated-salary: %s", json_response.get("error"))
+                return {}
+            return json_response.get("data", {})
+        except Exception as e:
+            logger.exception("Error parsing JSON from /estimated-salary: %s", e)
+    return {}
+
+def get_company_job_salary(job_title, company, location="us"):
+    """
+    Calls the /company-job-salary endpoint for a given job title and company (and optional location).
+    Returns a dictionary with company salary info.
+    """
+    endpoint = "/company-job-salary"
+    params = {
+        "job_title": job_title,
+        "company": company,
+        "location": location
+    }
+    response = call_api(endpoint, params)
+    if response:
+        try:
+            json_response = response.json()
+            if json_response.get("status") != "OK":
+                logger.error("API error in /company-job-salary: %s", json_response.get("error"))
+                return {}
+            return json_response.get("data", {})
+        except Exception as e:
+            logger.exception("Error parsing JSON from /company-job-salary: %s", e)
+    return {}
+
+# -------------------
+# Database Insertion / Update Helpers
+# -------------------
+def insert_job(conn, job):
+    """
+    Insert a job (from /search endpoint) into the jobs table.
+    """
+    try:
+        cur = conn.cursor()
+        title = job.get("job_title", "N/A")
+        company = job.get("employer_name", "N/A")
+        city = job.get("job_city", "")
+        country = job.get("job_country", "")
+        location_str = f"{city}, {country}" if city or country else "Location not provided"
+        description = job.get("job_description", "N/A")
+        ticker = job.get("ticker", None)
+        posted_date = job.get("posted_date", None)
+        jsearch_job_id = job.get("job_id")
+        cur.execute("""
+            INSERT OR IGNORE INTO jobs (jsearch_job_id, title, company, location, description, ticker, posted_date)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        """, (jsearch_job_id, title, company, location_str, description, ticker, posted_date))
+        conn.commit()
+    except sqlite3.Error as e:
+        logger.error("Error inserting job: %s", e)
+
+def update_job_with_details(conn, jsearch_job_id, details, estimated_salary, company_salary):
+    """
+    Update the job record with additional data from /job-details, /estimated-salary, and /company-job-salary endpoints.
+    """
+    try:
+        cur = conn.cursor()
+        cur.execute("""
+            UPDATE jobs 
+            SET details = ?, estimated_salary = ?, company_salary = ?
+            WHERE jsearch_job_id = ?
+        """, (str(details), str(estimated_salary), str(company_salary), jsearch_job_id))
+        conn.commit()
+    except sqlite3.Error as e:
+        logger.error("Error updating job with details: %s", e)
 
 # -------------------
 # Main Function
 # -------------------
 def main():
-    print("Starting job search for finance/trading/portfolio management/investment positions...")
-
-    # Initialize the database manager
-    db_manager = DBManager(DATABASE_FILE)
-
-    overall_jobs = {}
-
-    # Search for each query and store the results in the database
-    for query in SEARCH_QUERIES:
-        print(f"Searching for jobs with query: '{query}'")
-        jobs = search_jobs(query)
-        overall_jobs[query] = jobs
-        print(f"Found {len(jobs)} jobs for query '{query}'")
-
-        # Process each job and insert into the database
-        for job in jobs:
-            title = job.get("job_title", "N/A")
-            company = job.get("employer_name", "N/A")
-            city = job.get("job_city", "")
-            country = job.get("job_country", "")
-            location_str = f"{city}, {country}" if city or country else "Location not provided"
-            description = job.get("job_description", "N/A")
-            ticker = job.get("ticker", None)
-            posted_date = job.get("posted_date", None)  # Assuming the API provides this field
-            similarity_score = None  # Placeholder for later resume-job matching
-
-            # Insert the job posting into the database
-            db_manager.add_job(title, company, location_str, description, ticker, posted_date, similarity_score)
-
-    print("Job scraping and database insertion complete.")
-    db_manager.close()
+    logger.info("Starting job scraping using all JSearch endpoints...")
+    
+    # Initialize the jobs table.
+    initialize_jobs_table(DATABASE_FILE)
+    
+    # Example search query
+    search_query = "quantitative trading"
+    jobs = search_jobs(search_query)
+    logger.info("Found %s jobs for query '%s'.", len(jobs), search_query)
+    
+    # Open a database connection.
+    conn = sqlite3.connect(DATABASE_FILE)
+    
+    # Insert jobs from the /search endpoint.
+    for job in jobs:
+        insert_job(conn, job)
+    
+    # For each job, retrieve additional data from other endpoints and update the record.
+    for job in jobs:
+        jsearch_job_id = job.get("job_id")
+        # Get details from /job-details
+        details_data = get_job_details(jsearch_job_id)
+        # Get estimated salary data from /estimated-salary
+        estimated_salary_data = get_estimated_salary(job.get("job_title", ""))
+        # Get company-specific salary info from /company-job-salary
+        company_salary_data = get_company_job_salary(job.get("job_title", ""), job.get("employer_name", ""))
+        
+        update_job_with_details(conn, jsearch_job_id, details_data, estimated_salary_data, company_salary_data)
+    
+    conn.close()
+    logger.info("Job scraping and endpoint extraction complete.")
 
 if __name__ == "__main__":
     main()
+
+
+
+================================================
+File: scripts/sbert_parser.py
+================================================
+#!/usr/bin/env python3
+import os
+import sqlite3
+import logging
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+
+from config import DATABASE_FILE  # Adjust the path if necessary
+from utils.logging import setup_logging
+
+logger = setup_logging()
+
+def load_resume_text(resume_path):
+    """
+    Load the resume text from a file.
+    """
+    try:
+        with open(resume_path, "r", encoding="utf-8") as f:
+            return f.read()
+    except Exception as e:
+        logger.exception("Error loading resume text: %s", e)
+        raise
+
+def compute_sbert_similarity(resume_text, job_texts, model_name="all-MiniLM-L6-v2"):
+    """
+    Compute cosine similarity scores between the resume and job texts using SBERT.
+    Returns a 1D numpy array of similarity scores.
+    """
+    model = SentenceTransformer(model_name)
+    # Encode returns numpy arrays
+    resume_embedding = model.encode([resume_text])   # shape: (1, embedding_dim)
+    job_embeddings = model.encode(job_texts)         # shape: (num_jobs, embedding_dim)
+
+    # Compute cosine similarities (resume vs. each job)
+    similarities = cosine_similarity(resume_embedding, job_embeddings)
+    # similarities is shape (1, num_jobs). Flatten to shape (num_jobs,)
+    return similarities.flatten()
+
+def add_sbert_column_if_needed(conn):
+    """
+    Add a new column 'similarity_score_sbert' to the jobs table if it does not exist.
+    SQLite doesn't support IF NOT EXISTS for ALTER TABLE, so we try and catch the error.
+    """
+    try:
+        conn.execute("ALTER TABLE jobs ADD COLUMN similarity_score_sbert REAL")
+        conn.commit()
+        logger.info("Added column similarity_score_sbert to jobs table.")
+    except sqlite3.OperationalError as e:
+        if "duplicate column name" in str(e).lower():
+            logger.info("Column similarity_score_sbert already exists.")
+        else:
+            logger.error("Error adding new column: %s", e)
+            raise
+
+def update_sbert_similarity(db_file, resume_path):
+    """
+    Retrieves all job descriptions from the jobs table, computes similarity scores
+    with SBERT, and updates each record with the SBERT-based similarity score.
+    """
+    try:
+        conn = sqlite3.connect(db_file)
+        cur = conn.cursor()
+
+        # Ensure the new column exists.
+        add_sbert_column_if_needed(conn)
+
+        # Retrieve job_id and description from the jobs table.
+        cur.execute("SELECT job_id, description FROM jobs")
+        jobs = cur.fetchall()
+        if not jobs:
+            logger.info("No jobs found in database to update.")
+            return
+
+        job_ids = [job_id for job_id, _ in jobs]
+        job_descriptions = [desc for _, desc in jobs]
+
+        # Load and preprocess the resume text.
+        resume_text = load_resume_text(resume_path)
+
+        # Compute SBERT similarity scores.
+        scores = compute_sbert_similarity(resume_text, job_descriptions)
+        logger.info("Computed SBERT similarity scores for %d jobs.", len(scores))
+
+        # Update each job record with the SBERT similarity score.
+        for job_id, score in zip(job_ids, scores):
+            float_score = float(score)  # Ensure it's a plain Python float
+            logger.debug("Updating job_id=%s with SBERT similarity=%f (type=%s)",
+                         job_id, float_score, type(float_score))
+            cur.execute("UPDATE jobs SET similarity_score_sbert = ? WHERE job_id = ?",
+                        (float_score, job_id))
+        conn.commit()
+        logger.info("Updated SBERT similarity scores for %d jobs.", len(job_ids))
+    except Exception as e:
+        logger.exception("Error updating SBERT similarity scores: %s", e)
+    finally:
+        if conn:
+            conn.close()
+
+if __name__ == "__main__":
+    # Adjust the path to your resume if necessary.
+    resume_path = os.path.join(os.getcwd(), "resume.txt")
+    update_sbert_similarity(DATABASE_FILE, resume_path)
+
+
+
+================================================
+File: scripts/tfidf_parser.py
+================================================
+import os
+import re
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+def load_resume(resume_path):
+    """
+    Load the resume text from a file.
+    If your resume is a PDF, consider using a PDF parser (e.g., PyPDF2) to extract the text.
+    """
+    with open(resume_path, 'r', encoding='utf-8') as f:
+        return f.read()
+
+def preprocess_text(text):
+    """
+    Preprocess text by lowercasing and removing non-alphanumeric characters.
+    You can expand this function to include more sophisticated preprocessing.
+    """
+    text = text.lower()
+    # Remove punctuation and non-word characters
+    text = re.sub(r'[\W_]+', ' ', text)
+    return text
+
+def build_tfidf_vectors(resume_text, job_texts):
+    """
+    Create TF-IDF vectors for the resume and a list of job descriptions.
+    Returns the resume vector, job vectors, and the fitted vectorizer.
+    """
+    documents = [resume_text] + job_texts
+    vectorizer = TfidfVectorizer(stop_words='english')
+    tfidf_matrix = vectorizer.fit_transform(documents)
+    resume_vector = tfidf_matrix[0]
+    job_vectors = tfidf_matrix[1:]
+    return resume_vector, job_vectors, vectorizer
+
+def compute_similarity(resume_vector, job_vectors):
+    """
+    Compute cosine similarity between the resume vector and each job vector.
+    Returns a list of similarity scores.
+    """
+    similarities = cosine_similarity(resume_vector, job_vectors)
+    return similarities.flatten()
+
+def parse_resume_and_match(resume_path, job_texts):
+    """
+    High-level function that loads and preprocesses the resume,
+    builds TF-IDF vectors for both the resume and the job texts,
+    and computes similarity scores.
+    
+    Parameters:
+      resume_path (str): Path to the resume file.
+      job_texts (List[str]): List of job description texts.
+    
+    Returns:
+      List[float]: Similarity scores for each job description.
+    """
+    # Load and preprocess resume
+    resume_text = load_resume(resume_path)
+    resume_text = preprocess_text(resume_text)
+    
+    # Preprocess each job description
+    processed_jobs = [preprocess_text(job) for job in job_texts]
+    
+    # Build TF-IDF vectors and compute similarity scores
+    resume_vector, job_vectors, _ = build_tfidf_vectors(resume_text, processed_jobs)
+    similarity_scores = compute_similarity(resume_vector, job_vectors)
+    return similarity_scores
+
+# For testing purposes:
+if __name__ == '__main__':
+    # Assume you have a plain text resume file named 'resume.txt' in your project root.
+    resume_file = os.path.join(os.getcwd(), 'resume.txt')
+    # Sample job descriptions (in reality, these would come from your job scraping pipeline)
+    sample_jobs = [
+        "Looking for a quantitative analyst with strong mathematical background and programming skills in Python.",
+        "Software engineer required with expertise in web development and JavaScript frameworks.",
+        "Financial analyst needed for portfolio management, trading strategies, and investment analysis."
+    ]
+    scores = parse_resume_and_match(resume_file, sample_jobs)
+    for idx, score in enumerate(scores, start=1):
+        print(f"Job {idx} similarity score: {score:.4f}")
+
 
 
 
@@ -1604,38 +2026,38 @@ def initialize_database(db_file, schema_file='schema.sql'):
 ================================================
 File: utils/logging.py
 ================================================
-# logging_setup.py
-
 import logging
 import logging.handlers
 import os
+import sys
 
 def setup_logging(log_dir='logs', log_file='app.log', level=logging.INFO):
-    """
-    Sets up logging for the application.
-    Logs are output to both the console and a rotating file handler.
-    """
-    # Ensure the log directory exists
+    logger = logging.getLogger()
+    # If handlers already exist, return the logger to avoid duplicate messages.
+    if logger.hasHandlers():
+        return logger
+
+    # Ensure the log directory exists.
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
 
     log_path = os.path.join(log_dir, log_file)
-
-    # Create the root logger
-    logger = logging.getLogger()
     logger.setLevel(level)
 
-    # Define a common log formatter
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
-    # Console handler for output to the terminal
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(level)
-    console_handler.setFormatter(formatter)
-    logger.addHandler(console_handler)
+    # Create a stream handler with UTF-8 encoding to avoid Unicode errors.
+    stream_handler = logging.StreamHandler(sys.stdout)
+    try:
+        stream_handler.setStream(sys.stdout)
+    except Exception:
+        pass
+    stream_handler.setLevel(level)
+    stream_handler.setFormatter(formatter)
+    logger.addHandler(stream_handler)
 
-    # Rotating file handler for saving logs to a file
-    file_handler = logging.handlers.RotatingFileHandler(log_path, maxBytes=10*1024*1024, backupCount=5)
+    # Create a rotating file handler.
+    file_handler = logging.handlers.RotatingFileHandler(log_path, maxBytes=10*1024*1024, backupCount=5, encoding='utf-8')
     file_handler.setLevel(level)
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
