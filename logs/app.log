@@ -583,3 +583,24 @@
 2025-03-28 21:15:47,456 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
 2025-03-28 21:15:48,983 - root - INFO - Saved 10 SBERT parser results for job_id 2.
 2025-03-28 21:15:50,947 - root - INFO - Validation complete.
+2025-03-28 21:19:39,072 - numexpr.utils - INFO - Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2025-03-28 21:19:39,074 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2025-03-28 21:19:51,431 - scripts.tfidf_parser - INFO - Computed TF-IDF similarity scores for 12 jobs.
+2025-03-28 21:19:51,432 - scripts.tfidf_parser - INFO - Updated TF-IDF similarity scores for 12 jobs.
+2025-03-28 21:19:51,433 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 21:19:51,436 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 21:19:51,436 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 21:19:53,142 - root - INFO - Computed SBERT similarity scores for 12 jobs.
+2025-03-28 21:19:53,142 - root - INFO - Updated SBERT similarity scores for 12 jobs.
+2025-03-28 21:19:53,143 - root - INFO - Table 'parser_results' created or already exists.
+2025-03-28 21:19:59,424 - root - INFO - Saved 10 TF-IDF parser results for job_id 2.
+2025-03-28 21:19:59,447 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 21:19:59,448 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 21:20:01,117 - root - INFO - Saved 10 SBERT parser results for job_id 2.
+2025-03-28 21:20:03,303 - root - INFO - Validation complete.
+2025-03-28 21:20:26,588 - root - INFO - Table 'parser_results' created or already exists.
+2025-03-28 21:20:29,419 - root - INFO - Saved 10 TF-IDF parser results for job_id 2.
+2025-03-28 21:20:29,427 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 21:20:29,429 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 21:20:30,998 - root - INFO - Saved 10 SBERT parser results for job_id 2.
+2025-03-28 21:20:32,999 - root - INFO - Validation complete.
