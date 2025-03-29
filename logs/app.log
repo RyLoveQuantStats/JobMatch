@@ -3655,3 +3655,62 @@ sqlite3.OperationalError: no such table: jobs
 2025-03-29 12:48:53,350 - root - ERROR - Error: Received status code 400 for endpoint /company-job-salary with params: {'job_title': '', 'company': '', 'location': 'us'}
 2025-03-29 12:48:55,001 - root - ERROR - Error: Received status code 400 for endpoint /estimated-salary with params: {'job_title': '', 'location': 'us'}
 2025-03-29 12:48:55,283 - root - ERROR - Error: Received status code 400 for endpoint /company-job-salary with params: {'job_title': '', 'company': '', 'location': 'us'}
+2025-03-29 12:55:28,549 - root - INFO - Starting combined ranking...
+2025-03-29 12:55:50,663 - root - INFO - Starting combined ranking...
+2025-03-29 12:56:38,526 - scripts.tfidf_parser - INFO - Computed TF-IDF similarity scores for 2201 jobs.
+2025-03-29 12:56:39,464 - scripts.tfidf_parser - INFO - Updated TF-IDF similarity scores for 2201 jobs.
+2025-03-29 12:56:39,472 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-29 12:56:39,503 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-29 12:56:39,504 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-29 12:57:20,978 - root - INFO - Computed SBERT similarity scores for 2201 jobs.
+2025-03-29 12:57:21,446 - root - INFO - Updated SBERT similarity scores for 2201 jobs.
+2025-03-29 12:57:21,454 - root - INFO - Table 'parser_results' created or already exists.
+2025-03-29 13:00:09,469 - root - INFO - Saved 10 TF-IDF parser results for job_id 59.
+2025-03-29 13:00:09,537 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-29 13:00:09,538 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-29 13:00:11,974 - root - INFO - Saved 10 SBERT parser results for job_id 53.
+2025-03-29 13:00:20,754 - root - INFO - Validation complete.
+2025-03-29 13:00:37,955 - root - INFO - Starting combined ranking...
+2025-03-29 13:00:38,800 - root - INFO - Top 10 ranked jobs:
+2025-03-29 13:00:38,802 - root - INFO - Job ID: 89, Final Score: 0.7359
+2025-03-29 13:00:38,802 - root - INFO - Job ID: 79, Final Score: 0.7343
+2025-03-29 13:00:38,803 - root - INFO - Job ID: 586, Final Score: 0.7320
+2025-03-29 13:00:38,804 - root - INFO - Job ID: 72, Final Score: 0.7277
+2025-03-29 13:00:38,804 - root - INFO - Job ID: 573, Final Score: 0.7067
+2025-03-29 13:00:38,805 - root - INFO - Job ID: 24, Final Score: 0.7058
+2025-03-29 13:00:38,805 - root - INFO - Job ID: 12, Final Score: 0.6875
+2025-03-29 13:00:38,805 - root - INFO - Job ID: 76, Final Score: 0.6857
+2025-03-29 13:00:38,805 - root - INFO - Job ID: 499, Final Score: 0.6857
+2025-03-29 13:00:38,806 - root - INFO - Job ID: 524, Final Score: 0.6857
+2025-03-29 13:05:39,260 - root - INFO - Starting combined ranking...
+2025-03-29 13:05:40,176 - root - INFO - Top 10 ranked jobs:
+2025-03-29 13:05:40,177 - root - INFO - Job ID: 89, Final Score: 0.7359
+2025-03-29 13:05:40,177 - root - INFO - Job ID: 79, Final Score: 0.7343
+2025-03-29 13:05:40,177 - root - INFO - Job ID: 586, Final Score: 0.7320
+2025-03-29 13:05:40,178 - root - INFO - Job ID: 72, Final Score: 0.7277
+2025-03-29 13:05:40,178 - root - INFO - Job ID: 573, Final Score: 0.7067
+2025-03-29 13:05:40,178 - root - INFO - Job ID: 24, Final Score: 0.7058
+2025-03-29 13:05:40,179 - root - INFO - Job ID: 12, Final Score: 0.6875
+2025-03-29 13:05:40,179 - root - INFO - Job ID: 76, Final Score: 0.6857
+2025-03-29 13:05:40,179 - root - INFO - Job ID: 499, Final Score: 0.6857
+2025-03-29 13:05:40,179 - root - INFO - Job ID: 524, Final Score: 0.6857
+2025-03-29 13:05:40,190 - root - INFO - Table 'parser_results' created or already exists.
+2025-03-29 13:05:43,961 - root - INFO - Saved 10 TF-IDF parser results for job_id 59.
+2025-03-29 13:05:43,998 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-29 13:05:44,000 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-29 13:05:45,978 - root - INFO - Saved 10 SBERT parser results for job_id 53.
+2025-03-29 13:05:48,778 - root - INFO - Validation complete.
+2025-03-29 13:08:26,612 - root - INFO - Starting combined ranking and updating final similarity scores...
+2025-03-29 13:08:26,625 - root - INFO - Column 'final_similarity_score' added to jobs table.
+2025-03-29 13:08:27,316 - root - INFO - Final similarity scores updated in the database.
+2025-03-29 13:08:27,317 - root - INFO - Top 10 ranked jobs based on final similarity score:
+2025-03-29 13:08:27,317 - root - INFO - Job ID: 89, Final Score: 0.7359
+2025-03-29 13:08:27,317 - root - INFO - Job ID: 79, Final Score: 0.7343
+2025-03-29 13:08:27,318 - root - INFO - Job ID: 586, Final Score: 0.7320
+2025-03-29 13:08:27,318 - root - INFO - Job ID: 72, Final Score: 0.7277
+2025-03-29 13:08:27,318 - root - INFO - Job ID: 573, Final Score: 0.7067
+2025-03-29 13:08:27,318 - root - INFO - Job ID: 24, Final Score: 0.7058
+2025-03-29 13:08:27,318 - root - INFO - Job ID: 12, Final Score: 0.6875
+2025-03-29 13:08:27,320 - root - INFO - Job ID: 76, Final Score: 0.6857
+2025-03-29 13:08:27,320 - root - INFO - Job ID: 499, Final Score: 0.6857
+2025-03-29 13:08:27,320 - root - INFO - Job ID: 524, Final Score: 0.6857
