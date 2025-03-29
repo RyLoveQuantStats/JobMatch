@@ -22,3 +22,361 @@
 2025-03-28 17:39:37,476 - root - INFO - Job scraping and database insertion complete.
 2025-03-28 17:39:37,476 - root - INFO - Job scraping and database insertion complete.
 2025-03-28 17:39:37,476 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:12:45,931 - numexpr.utils - INFO - Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2025-03-28 18:12:45,932 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2025-03-28 18:12:46,547 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:12:46,547 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:12:46,547 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:12:46,547 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:12:46,559 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:12:46,559 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:12:46,559 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:12:46,559 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:12:49,654 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:12:49,654 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:12:49,667 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:12:49,667 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:12:49,669 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:12:49,669 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:12:49,723 - root - INFO - Computed similarity scores for 50 jobs.
+2025-03-28 18:12:49,723 - root - INFO - Computed similarity scores for 50 jobs.
+2025-03-28 18:12:49,735 - root - INFO - Updated similarity scores for 50 jobs.
+2025-03-28 18:12:49,735 - root - INFO - Updated similarity scores for 50 jobs.
+2025-03-28 18:12:49,736 - root - INFO - Pipeline complete.
+2025-03-28 18:12:49,736 - root - INFO - Pipeline complete.
+2025-03-28 18:19:15,129 - root - INFO - Added column similarity_score_sbert to jobs table.
+2025-03-28 18:19:15,129 - root - INFO - Added column similarity_score_sbert to jobs table.
+2025-03-28 18:19:15,129 - root - INFO - Added column similarity_score_sbert to jobs table.
+2025-03-28 18:19:15,135 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:19:15,135 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:19:15,135 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:19:15,136 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:19:15,136 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:19:15,136 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:19:21,896 - root - INFO - Computed SBERT similarity scores for 50 jobs.
+2025-03-28 18:19:21,896 - root - INFO - Computed SBERT similarity scores for 50 jobs.
+2025-03-28 18:19:21,896 - root - INFO - Computed SBERT similarity scores for 50 jobs.
+2025-03-28 18:19:21,908 - root - INFO - Updated SBERT similarity scores for 50 jobs.
+2025-03-28 18:19:21,908 - root - INFO - Updated SBERT similarity scores for 50 jobs.
+2025-03-28 18:19:21,908 - root - INFO - Updated SBERT similarity scores for 50 jobs.
+2025-03-28 18:20:00,757 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:20:00,757 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:20:00,757 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:20:00,757 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:20:00,764 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:20:00,764 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:20:00,764 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:20:00,764 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:20:00,766 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:20:00,766 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:20:00,766 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:20:00,766 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:20:02,579 - root - INFO - Computed SBERT similarity scores for 50 jobs.
+2025-03-28 18:20:02,579 - root - INFO - Computed SBERT similarity scores for 50 jobs.
+2025-03-28 18:20:02,579 - root - INFO - Computed SBERT similarity scores for 50 jobs.
+2025-03-28 18:20:02,579 - root - INFO - Computed SBERT similarity scores for 50 jobs.
+2025-03-28 18:20:02,581 - root - INFO - Updated SBERT similarity scores for 50 jobs.
+2025-03-28 18:20:02,581 - root - INFO - Updated SBERT similarity scores for 50 jobs.
+2025-03-28 18:20:02,581 - root - INFO - Updated SBERT similarity scores for 50 jobs.
+2025-03-28 18:20:02,581 - root - INFO - Updated SBERT similarity scores for 50 jobs.
+2025-03-28 18:23:23,122 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:23:23,122 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:23:23,122 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:23:23,122 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:23:23,122 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:23:23,136 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:23:23,136 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:23:23,136 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:23:23,136 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:23:23,136 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:23:23,138 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:23:23,138 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:23:23,138 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:23:23,138 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:23:23,138 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:23:25,388 - root - INFO - Computed SBERT similarity scores for 50 jobs.
+2025-03-28 18:23:25,388 - root - INFO - Computed SBERT similarity scores for 50 jobs.
+2025-03-28 18:23:25,388 - root - INFO - Computed SBERT similarity scores for 50 jobs.
+2025-03-28 18:23:25,388 - root - INFO - Computed SBERT similarity scores for 50 jobs.
+2025-03-28 18:23:25,388 - root - INFO - Computed SBERT similarity scores for 50 jobs.
+2025-03-28 18:23:25,404 - root - INFO - Updated SBERT similarity scores for 50 jobs.
+2025-03-28 18:23:25,404 - root - INFO - Updated SBERT similarity scores for 50 jobs.
+2025-03-28 18:23:25,404 - root - INFO - Updated SBERT similarity scores for 50 jobs.
+2025-03-28 18:23:25,404 - root - INFO - Updated SBERT similarity scores for 50 jobs.
+2025-03-28 18:23:25,404 - root - INFO - Updated SBERT similarity scores for 50 jobs.
+2025-03-28 18:43:11,491 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:43:11,491 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:43:11,491 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:43:11,491 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:43:11,491 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:43:11,491 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:43:11,491 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:43:11,499 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:43:11,499 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:43:11,499 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:43:11,499 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:43:11,499 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:43:11,499 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:43:11,499 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:43:11,526 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:43:11,526 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:43:11,526 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:43:11,526 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:43:11,526 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:43:11,526 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:43:11,526 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:43:11,528 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:43:11,528 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:43:11,528 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:43:11,528 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:43:11,528 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:43:11,528 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:43:11,528 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:43:14,490 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:43:14,490 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:43:14,490 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:43:14,490 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:43:14,490 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:43:14,490 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:43:14,490 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:43:14,508 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:43:14,508 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:43:14,508 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:43:14,508 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:43:14,508 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:43:14,508 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:43:14,508 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:43:14,510 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:43:14,510 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:43:14,510 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:43:14,510 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:43:14,510 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:43:14,510 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:43:14,510 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:43:14,761 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 18:43:14,761 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 18:43:14,761 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 18:43:14,761 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 18:43:14,761 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 18:43:14,761 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 18:43:14,761 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 18:43:14,765 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:43:14,765 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:43:14,765 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:43:14,765 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:43:14,765 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:43:14,765 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:43:14,765 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:43:14,782 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:43:14,782 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:43:14,782 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:43:14,782 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:43:14,782 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:43:14,782 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:43:14,782 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:43:14,783 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:43:14,783 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:43:14,783 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:43:14,783 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:43:14,783 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:43:14,783 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:43:14,783 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:43:22,492 - numexpr.utils - INFO - Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2025-03-28 18:43:22,492 - numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+2025-03-28 18:43:28,980 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:43:28,980 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:43:28,980 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:43:28,981 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:43:28,981 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:43:28,981 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:43:28,982 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:43:28,982 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:43:28,982 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:43:28,983 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:43:28,983 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:43:28,983 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:43:33,081 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:43:33,081 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:43:33,081 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:43:33,096 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:43:33,096 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:43:33,096 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:43:33,098 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:43:33,098 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:43:33,098 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:43:33,159 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 18:43:33,159 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 18:43:33,159 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 18:43:33,160 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:43:33,160 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:43:33,160 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:43:33,163 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:43:33,163 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:43:33,163 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:43:33,164 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:43:33,164 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:43:33,164 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:43:35,886 - root - INFO - Computed SBERT similarity scores for 70 jobs.
+2025-03-28 18:43:35,886 - root - INFO - Computed SBERT similarity scores for 70 jobs.
+2025-03-28 18:43:35,886 - root - INFO - Computed SBERT similarity scores for 70 jobs.
+2025-03-28 18:43:35,899 - root - INFO - Updated SBERT similarity scores for 70 jobs.
+2025-03-28 18:43:35,899 - root - INFO - Updated SBERT similarity scores for 70 jobs.
+2025-03-28 18:43:35,899 - root - INFO - Updated SBERT similarity scores for 70 jobs.
+2025-03-28 18:43:35,900 - root - INFO - Pipeline complete.
+2025-03-28 18:43:35,900 - root - INFO - Pipeline complete.
+2025-03-28 18:43:35,900 - root - INFO - Pipeline complete.
+2025-03-28 18:45:52,226 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:45:52,226 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:45:52,226 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:45:52,226 - root - INFO - Starting the full job scraping and resume matching pipeline...
+2025-03-28 18:45:52,228 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:45:52,228 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:45:52,228 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:45:52,228 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 18:45:52,232 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:45:52,232 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:45:52,232 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:45:52,232 - root - INFO - Jobs table created or already exists.
+2025-03-28 18:45:52,234 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:45:52,234 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:45:52,234 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:45:52,234 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 18:45:54,945 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:45:54,945 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:45:54,945 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:45:54,945 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 18:45:54,960 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:45:54,960 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:45:54,960 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:45:54,960 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 18:45:54,963 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:45:54,963 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:45:54,963 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:45:54,963 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 18:45:55,051 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 18:45:55,051 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 18:45:55,051 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 18:45:55,051 - root - INFO - Updating SBERT similarity scores...
+2025-03-28 18:45:55,053 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:45:55,053 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:45:55,053 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:45:55,053 - root - INFO - Column similarity_score_sbert already exists.
+2025-03-28 18:45:55,059 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:45:55,059 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:45:55,059 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:45:55,059 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-03-28 18:45:55,060 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:45:55,060 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:45:55,060 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:45:55,060 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-28 18:45:57,345 - root - INFO - Computed SBERT similarity scores for 80 jobs.
+2025-03-28 18:45:57,345 - root - INFO - Computed SBERT similarity scores for 80 jobs.
+2025-03-28 18:45:57,345 - root - INFO - Computed SBERT similarity scores for 80 jobs.
+2025-03-28 18:45:57,345 - root - INFO - Computed SBERT similarity scores for 80 jobs.
+2025-03-28 18:45:57,984 - root - INFO - Updated SBERT similarity scores for 80 jobs.
+2025-03-28 18:45:57,984 - root - INFO - Updated SBERT similarity scores for 80 jobs.
+2025-03-28 18:45:57,984 - root - INFO - Updated SBERT similarity scores for 80 jobs.
+2025-03-28 18:45:57,984 - root - INFO - Updated SBERT similarity scores for 80 jobs.
+2025-03-28 18:45:57,988 - root - INFO - Pipeline complete.
+2025-03-28 18:45:57,988 - root - INFO - Pipeline complete.
+2025-03-28 18:45:57,988 - root - INFO - Pipeline complete.
+2025-03-28 18:45:57,988 - root - INFO - Pipeline complete.
+2025-03-28 19:02:23,042 - root - INFO - Starting job scraping using all JSearch endpoints...
+2025-03-28 19:02:23,042 - root - INFO - Starting job scraping using all JSearch endpoints...
+2025-03-28 19:02:23,042 - root - INFO - Starting job scraping using all JSearch endpoints...
+2025-03-28 19:02:23,042 - root - INFO - Starting job scraping using all JSearch endpoints...
+2025-03-28 19:02:23,042 - root - INFO - Starting job scraping using all JSearch endpoints...
+2025-03-28 19:02:23,069 - root - INFO - Jobs table created or already exists.
+2025-03-28 19:02:23,069 - root - INFO - Jobs table created or already exists.
+2025-03-28 19:02:23,069 - root - INFO - Jobs table created or already exists.
+2025-03-28 19:02:23,069 - root - INFO - Jobs table created or already exists.
+2025-03-28 19:02:23,069 - root - INFO - Jobs table created or already exists.
+2025-03-28 19:02:25,826 - root - INFO - Found 10 jobs for query 'quantitative trading'.
+2025-03-28 19:02:25,826 - root - INFO - Found 10 jobs for query 'quantitative trading'.
+2025-03-28 19:02:25,826 - root - INFO - Found 10 jobs for query 'quantitative trading'.
+2025-03-28 19:02:25,826 - root - INFO - Found 10 jobs for query 'quantitative trading'.
+2025-03-28 19:02:25,826 - root - INFO - Found 10 jobs for query 'quantitative trading'.
+2025-03-28 19:02:25,832 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,832 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,832 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,832 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,832 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,860 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,860 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,860 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,860 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,860 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,861 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,861 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,861 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,861 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,861 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,863 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,863 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,863 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,863 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,863 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,865 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,865 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,865 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,865 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,865 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,867 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,867 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,867 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,867 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,867 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,869 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,869 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,869 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,869 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,869 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,870 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,870 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,870 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,870 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,870 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,871 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,871 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,871 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,871 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,871 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,872 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,872 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,872 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,872 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:25,872 - root - ERROR - Error inserting job: table jobs has no column named jsearch_job_id
+2025-03-28 19:02:29,849 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:29,849 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:29,849 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:29,849 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:29,849 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:33,970 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:33,970 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:33,970 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:33,970 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:33,970 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:37,471 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:37,471 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:37,471 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:37,471 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:37,471 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:41,346 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:41,346 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:41,346 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:41,346 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:41,346 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:44,729 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:44,729 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:44,729 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:44,729 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:44,729 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:47,842 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:47,842 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:47,842 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:47,842 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:02:47,842 - root - ERROR - Error updating job with details: no such column: details
+2025-03-28 19:03:13,017 - root - INFO - Starting job scraping using all JSearch endpoints...
+2025-03-28 19:03:13,052 - root - INFO - Jobs table created or already exists.
+2025-03-28 19:03:16,774 - root - INFO - Found 10 jobs for query 'quantitative trading'.
+2025-03-28 19:03:56,400 - root - INFO - Job scraping and endpoint extraction complete.
