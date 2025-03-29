@@ -1,0 +1,24 @@
+2025-03-28 17:35:01,576 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 17:35:01,577 - root - INFO - Initializing the database schema using schema file: schema.sql
+2025-03-28 17:36:22,708 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 17:36:22,708 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 17:36:22,709 - root - INFO - Initializing the database schema using schema file: schema.sql
+2025-03-28 17:36:22,709 - root - INFO - Initializing the database schema using schema file: schema.sql
+2025-03-28 17:39:34,467 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 17:39:34,467 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 17:39:34,467 - root - INFO - Starting job search for finance/trading/portfolio management/investment positions...
+2025-03-28 17:39:34,491 - root - INFO - Jobs table created or already exists.
+2025-03-28 17:39:34,491 - root - INFO - Jobs table created or already exists.
+2025-03-28 17:39:34,491 - root - INFO - Jobs table created or already exists.
+2025-03-28 17:39:34,492 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 17:39:34,492 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 17:39:34,492 - root - INFO - Searching for jobs with query: 'quantitative trading'
+2025-03-28 17:39:37,460 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 17:39:37,460 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 17:39:37,460 - root - INFO - Found 10 jobs for query 'quantitative trading'
+2025-03-28 17:39:37,475 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 17:39:37,475 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 17:39:37,475 - root - INFO - Inserted 10 jobs for query 'quantitative trading' into the database.
+2025-03-28 17:39:37,476 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 17:39:37,476 - root - INFO - Job scraping and database insertion complete.
+2025-03-28 17:39:37,476 - root - INFO - Job scraping and database insertion complete.
