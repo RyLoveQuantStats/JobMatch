@@ -10,3 +10,125 @@
 2025-03-29 21:01:07,359 - root - INFO - Starting troubleshooting of API calls with database data...
 2025-03-29 21:06:53,522 - root - ERROR - Error: Received status code 502 for endpoint /estimated-salary with params: {'job_title': 'Quantitative Research Developer', 'location': 'us'}
 2025-03-29 21:07:53,848 - root - ERROR - Error: Received status code 502 for endpoint /estimated-salary with params: {'job_title': 'Part-Time Clinical Research Coordinator - 240637', 'location': 'us'}
+2025-03-30 12:38:05,096 - root - INFO - Starting update for estimated salaries and company URLs...
+2025-03-30 12:38:41,379 - root - INFO - Starting update for estimated salaries and company URLs...
+2025-03-30 12:38:51,034 - root - INFO - Starting update for estimated salaries and company URLs...
+2025-03-30 12:39:18,529 - root - INFO - Starting update for estimated salaries and company URLs...
+2025-03-30 12:40:11,680 - root - INFO - Starting update for estimated salaries and company URLs...
+2025-03-30 12:40:11,695 - root - INFO - Found 2201 jobs to update.
+2025-03-30 12:41:24,442 - root - INFO - Starting update for estimated salaries and company URLs...
+2025-03-30 12:41:24,450 - root - INFO - Found 2201 jobs to update.
+2025-03-30 12:41:26,857 - root - ERROR - Error: Received status code 400 for endpoint /estimated-salary with params: {'title': 'Quantitative Trading  - 2025 University Graduate (US)', 'location': 'New York, US'}
+2025-03-30 12:41:26,859 - root - ERROR - Error updating job record 8VZF5VXLwv2DW0P4AAAAAA==: no such column: company_website
+2025-03-30 12:41:26,859 - root - INFO - Updated job 8VZF5VXLwv2DW0P4AAAAAA== with salary and URL.
+2025-03-30 12:41:29,142 - root - ERROR - Error: Received status code 400 for endpoint /estimated-salary with params: {'title': 'Quantitative Analyst', 'location': 'None, US'}
+2025-03-30 12:41:29,143 - root - ERROR - Error updating job record QIrmkDe3Bqx2fcVlAAAAAA==: no such column: company_website
+2025-03-30 12:41:29,144 - root - INFO - Updated job QIrmkDe3Bqx2fcVlAAAAAA== with salary and URL.
+2025-03-30 12:41:32,672 - root - ERROR - Error: Received status code 400 for endpoint /estimated-salary with params: {'title': 'Quantitative Systematic Trader | Experienced Hire', 'location': 'Bala Cynwyd, US'}
+2025-03-30 12:41:32,674 - root - ERROR - Error updating job record 0rqoeP93NmSZbP7PAAAAAA==: no such column: company_website
+2025-03-30 12:41:32,675 - root - INFO - Updated job 0rqoeP93NmSZbP7PAAAAAA== with salary and URL.
+2025-03-30 12:41:45,585 - root - INFO - Starting update for estimated salaries and company URLs...
+2025-03-30 12:41:45,595 - root - INFO - Found 2201 jobs to update.
+2025-03-30 12:41:47,493 - root - ERROR - Error: Received status code 400 for endpoint /estimated-salary with params: {'title': 'Quantitative Trading  - 2025 University Graduate (US)', 'location': 'New York, US'}
+2025-03-30 12:41:47,495 - root - ERROR - Error updating job record 8VZF5VXLwv2DW0P4AAAAAA==: no such column: company_website
+2025-03-30 12:41:47,496 - root - INFO - Updated job 8VZF5VXLwv2DW0P4AAAAAA== with salary and URL.
+2025-03-30 12:41:50,015 - root - ERROR - Error: Received status code 400 for endpoint /estimated-salary with params: {'title': 'Quantitative Analyst', 'location': 'None, US'}
+2025-03-30 12:41:50,016 - root - ERROR - Error updating job record QIrmkDe3Bqx2fcVlAAAAAA==: no such column: company_website
+2025-03-30 12:41:50,016 - root - INFO - Updated job QIrmkDe3Bqx2fcVlAAAAAA== with salary and URL.
+2025-03-30 12:41:52,942 - root - ERROR - Error: Received status code 400 for endpoint /estimated-salary with params: {'title': 'Quantitative Systematic Trader | Experienced Hire', 'location': 'Bala Cynwyd, US'}
+2025-03-30 12:41:52,943 - root - ERROR - Error updating job record 0rqoeP93NmSZbP7PAAAAAA==: no such column: company_website
+2025-03-30 12:41:52,944 - root - INFO - Updated job 0rqoeP93NmSZbP7PAAAAAA== with salary and URL.
+2025-03-30 12:41:55,661 - root - ERROR - Error: Received status code 400 for endpoint /estimated-salary with params: {'title': 'Strategy Developer - Quant Trading', 'location': 'New York, US'}
+2025-03-30 12:41:55,662 - root - ERROR - Error updating job record DGGXcArech2z23xPAAAAAA==: no such column: company_website
+2025-03-30 12:41:55,662 - root - INFO - Updated job DGGXcArech2z23xPAAAAAA== with salary and URL.
+2025-03-30 12:42:57,396 - root - INFO - Starting update for estimated salaries and company URLs...
+2025-03-30 12:42:57,406 - root - INFO - Found 2201 jobs to update.
+2025-03-30 12:43:01,011 - root - ERROR - Error updating job record 8VZF5VXLwv2DW0P4AAAAAA==: no such column: company_website
+2025-03-30 12:43:01,012 - root - INFO - Updated job 8VZF5VXLwv2DW0P4AAAAAA== with salary and URL.
+2025-03-30 12:43:04,374 - root - ERROR - Error updating job record QIrmkDe3Bqx2fcVlAAAAAA==: no such column: company_website
+2025-03-30 12:43:04,375 - root - INFO - Updated job QIrmkDe3Bqx2fcVlAAAAAA== with salary and URL.
+2025-03-30 12:43:07,892 - root - ERROR - Error updating job record 0rqoeP93NmSZbP7PAAAAAA==: no such column: company_website
+2025-03-30 12:43:07,892 - root - INFO - Updated job 0rqoeP93NmSZbP7PAAAAAA== with salary and URL.
+2025-03-30 12:52:24,364 - root - INFO - Starting update for estimated salaries and company URLs...
+2025-03-30 12:52:24,444 - root - INFO - Found 2201 jobs to update.
+2025-03-30 12:56:42,367 - root - INFO - Starting update for estimated salaries and company URLs...
+2025-03-30 12:56:50,229 - root - INFO - Starting update for estimated salaries and company URLs...
+2025-03-30 12:56:50,313 - root - INFO - Found 2201 jobs to update.
+2025-03-30 12:57:01,199 - root - INFO - Starting update for estimated salaries and company URLs...
+2025-03-30 12:57:01,206 - root - INFO - Found 2201 jobs to update.
+2025-03-30 12:57:29,255 - root - INFO - Starting update for estimated salaries and company URLs...
+2025-03-30 12:57:29,331 - root - INFO - Found 2201 jobs to update.
+2025-03-30 12:57:33,856 - root - ERROR - Error updating job record 8VZF5VXLwv2DW0P4AAAAAA==: no such column: company_website
+2025-03-30 12:57:33,856 - root - INFO - Updated job 8VZF5VXLwv2DW0P4AAAAAA== with salary and URL.
+2025-03-30 12:57:37,505 - root - ERROR - Error updating job record QIrmkDe3Bqx2fcVlAAAAAA==: no such column: company_website
+2025-03-30 12:57:37,507 - root - INFO - Updated job QIrmkDe3Bqx2fcVlAAAAAA== with salary and URL.
+2025-03-30 12:57:41,325 - root - ERROR - Error updating job record 0rqoeP93NmSZbP7PAAAAAA==: no such column: company_website
+2025-03-30 12:57:41,326 - root - INFO - Updated job 0rqoeP93NmSZbP7PAAAAAA== with salary and URL.
+2025-03-30 12:57:46,399 - root - ERROR - Error updating job record DGGXcArech2z23xPAAAAAA==: no such column: company_website
+2025-03-30 12:57:46,401 - root - INFO - Updated job DGGXcArech2z23xPAAAAAA== with salary and URL.
+2025-03-30 12:59:20,639 - root - INFO - Starting Clearbit update for company URLs...
+2025-03-30 12:59:20,657 - root - INFO - Added column 'company_website' to jobs table.
+2025-03-30 12:59:20,666 - root - INFO - Found 2201 jobs to update.
+2025-03-30 12:59:22,387 - root - ERROR - Clearbit error for company 'Citadel Securities': {"error":{"type":"invalid_api_key","message":"Invalid API key provided"}}
+2025-03-30 12:59:27,547 - root - ERROR - Clearbit error for company 'Citadel Securities': {"error":{"type":"invalid_api_key","message":"Invalid API key provided"}}
+2025-03-30 12:59:32,730 - root - ERROR - Clearbit error for company 'Citadel Securities': {"error":{"type":"invalid_api_key","message":"Invalid API key provided"}}
+2025-03-30 13:01:50,180 - root - INFO - Starting Clearbit update for company URLs...
+2025-03-30 13:01:50,182 - root - INFO - Column 'company_website' already exists.
+2025-03-30 13:01:50,189 - root - INFO - Found 2201 jobs to update.
+2025-03-30 13:01:50,367 - root - ERROR - Clearbit error for company 'Citadel Securities': {
+  "error": {
+    "type": "unknown_route",
+    "message": "Sorry, that route can not be found. Please refer to our docs https://clearbit.com/docs"
+  }
+}
+2025-03-30 13:01:55,661 - root - ERROR - Clearbit error for company 'Citadel Securities': {
+  "error": {
+    "type": "unknown_route",
+    "message": "Sorry, that route can not be found. Please refer to our docs https://clearbit.com/docs"
+  }
+}
+2025-03-30 13:02:00,821 - root - ERROR - Clearbit error for company 'Citadel Securities': {
+  "error": {
+    "type": "unknown_route",
+    "message": "Sorry, that route can not be found. Please refer to our docs https://clearbit.com/docs"
+  }
+}
+2025-03-30 13:11:45,774 - root - INFO - Starting Clearbit update for company URLs...
+2025-03-30 13:11:45,790 - root - INFO - Column 'company_website' already exists.
+2025-03-30 13:11:45,799 - root - INFO - Found 2201 jobs to update.
+2025-03-30 13:11:46,133 - root - ERROR - Clearbit error for company 'Citadel Securities': {
+  "error": {
+    "type": "unknown_route",
+    "message": "Sorry, that route can not be found. Please refer to our docs https://clearbit.com/docs"
+  }
+}
+2025-03-30 13:11:51,427 - root - ERROR - Clearbit error for company 'Citadel Securities': {
+  "error": {
+    "type": "unknown_route",
+    "message": "Sorry, that route can not be found. Please refer to our docs https://clearbit.com/docs"
+  }
+}
+2025-03-30 13:11:56,733 - root - ERROR - Clearbit error for company 'Citadel Securities': {
+  "error": {
+    "type": "unknown_route",
+    "message": "Sorry, that route can not be found. Please refer to our docs https://clearbit.com/docs"
+  }
+}
+2025-03-30 13:12:01,734 - root - INFO - Guessed company URL for 'Citadel Securities' as 'https://www.citadelsecurities.com'
+2025-03-30 13:12:01,749 - root - INFO - Updated job 8VZF5VXLwv2DW0P4AAAAAA== with company URL: https://www.citadelsecurities.com
+2025-03-30 13:12:03,041 - root - ERROR - Clearbit error for company 'Shell Plc': {
+  "error": {
+    "type": "unknown_route",
+    "message": "Sorry, that route can not be found. Please refer to our docs https://clearbit.com/docs"
+  }
+}
+2025-03-30 13:13:59,868 - root - INFO - Starting Clearbit update for company URLs...
+2025-03-30 13:13:59,876 - root - INFO - Column 'company_website' already exists.
+2025-03-30 13:13:59,886 - root - INFO - Found 2201 jobs to update.
+2025-03-30 13:16:07,840 - root - ERROR - Clearbit error for company 'Citadel Securities': {"messages":"The API is unreachable, please contact the API provider", "info": "Your Client (working) ---> Gateway (working) ---> API (not working)"}
+2025-03-30 13:18:20,329 - root - ERROR - Clearbit error for company 'Citadel Securities': {"messages":"The API is unreachable, please contact the API provider", "info": "Your Client (working) ---> Gateway (working) ---> API (not working)"}
+2025-03-30 13:18:34,556 - root - INFO - Starting Clearbit update for company URLs...
+2025-03-30 13:18:37,125 - root - INFO - Starting Clearbit update for company URLs...
+2025-03-30 13:18:37,126 - root - INFO - Column 'company_website' already exists.
+2025-03-30 13:18:37,134 - root - INFO - Found 2201 jobs to update.
+2025-03-30 13:20:44,638 - root - ERROR - Clearbit error for company 'Citadel Securities': {"messages":"The API is unreachable, please contact the API provider", "info": "Your Client (working) ---> Gateway (working) ---> API (not working)"}
