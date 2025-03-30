@@ -5,16 +5,16 @@ from datetime import datetime
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
+# SendGrid API configuration
+SENDGRID_API_KEY = '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'
+EMAIL_SENDER = 'rylo5252@colorado.edu'    
+EMAIL_RECIPIENT = 'jobscrape@yahoo.com'
+
 # ---------------------------
 # Configuration Settings
 # ---------------------------
 # Database file location
 DB_FILE = 'data.db'
-
-# SendGrid API configuration
-SENDGRID_API_KEY = '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'
-EMAIL_SENDER = 'rylo5252@colorado.edu'    
-EMAIL_RECIPIENT = 'jobscrape@yahoo.com'
 
 # Logging configuration
 logging.basicConfig(level=logging.INFO,
