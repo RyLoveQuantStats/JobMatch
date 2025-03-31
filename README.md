@@ -1,60 +1,77 @@
-# Finance Job Scraping & Forecasting System
+# BuffJobMatch: Finance Job Scraping, Matching & Forecasting System
 
 ## Overview
-This project is an automated system designed to scrape finance-related job postings, analyze and match job descriptions against a general-purpose finance resume, classify postings by sector, and forecast future job opportunities. It leverages multiple technologies—including API integrations, NLP techniques, SQL data storage, and (upcoming) interactive visualizations—to help users gain insights into the finance job market.
+BuffJobMatch is an automated, data-driven platform that aggregates finance job postings, intelligently matches them against a candidate’s resume using advanced Natural Language Processing (NLP) techniques, and forecasts emerging job trends. Built with a blend of API integrations, machine learning models (TF-IDF and SBERT), and time-series forecasting, BuffJobMatch provides valuable insights for finance majors and professionals looking to navigate the competitive finance job market.
 
-## Features
-- **Automated Job Scraping:** Uses the JSearch API to pull finance job postings.
-- **Data Storage:** Persists job data and analysis results in a SQLite database.
-- **Resume Matching:** Computes similarity scores between job descriptions and a finance resume using both TF-IDF and SBERT approaches.
-- **Analysis & Reporting:** Provides deep dive analysis with keyword insights and similarity metrics.
-- **Planned Enhancements:** 
-  - **Sector Classification:** Integration with YFinance API to categorize postings by finance sub-sector.
-  - **Forecasting:** Development of ARIMA models to forecast job posting trends.
-  - **Visualization:** Interactive dashboard built with Streamlit to explore current data and forecasts.
+## Key Features
+- **Automated Job Scraping:**  
+  Leverages the JSearch API to collect finance-related job postings from various sources, ensuring you’re always updated with the latest opportunities.
+  
+- **Resume Matching:**  
+  Uses TF-IDF and SBERT algorithms to compare job descriptions against a candidate’s resume, providing a similarity score that helps highlight the best-fit positions.
+  
+- **Data Storage & Analysis:**  
+  Stores all job data in a SQLite database and offers detailed analytical reports, including keyword contributions and similarity metrics.
+  
+- **Forecasting & Trends:**  
+  (Upcoming) Incorporates ARIMA-based time-series forecasting to predict future job trends, helping you plan your career path with data-driven insights.
+  
+- **Interactive Visualizations:**  
+  (Planned) A Streamlit dashboard will offer dynamic visualizations, making it easy to explore job trends, similarity scores, and forecasts interactively.
 
-## Installation
+## Why BuffJobMatch is Great for Finance Majors
+- **Tailored Career Insights:**  
+  Whether you’re exploring roles in quantitative analysis, risk management, or portfolio management, BuffJobMatch aligns your resume strengths with current market needs.
+  
+- **Data-Driven Decision Making:**  
+  Gain a competitive edge by understanding the evolving landscape of finance jobs through detailed analytics and forecasting.
+  
+- **Hands-On Learning:**  
+  The project itself is a showcase of advanced Python programming, NLP, machine learning, and financial data analysis—ideal for finance majors looking to build and demonstrate technical expertise.
+
+## Installation & Setup
 1. **Clone the Repository:**
-   git clone https://github.com/Team-Tu/JobScrape.git
-   cd JobScrape
+   
+   git clone https://github.com/YourUsername/BuffJobMatch.git
+   cd BuffJobMatch
    
 2. **Install Dependencies:**
+
+   Ensure you have Python 3 installed, then run:
    pip install -r requirements.txt
    
 3. **Configuration:**
-   - Update `config.py` with your API keys (for JSearch and YFinance) and adjust any file paths as necessary.
+   - Update `config.py` with your API keys for JSearch, SendGrid, and any other required services.
+   - Adjust file paths as necessary.
 
-## Usage
-- **Run the Pipeline:**
-  Execute the main script to run the full pipeline—from scraping to analysis:
-  python main.py
-  
-- **Database:**
-  The job postings and analysis results are stored in the SQLite database (`data.db`).
+4. **Run the Pipeline:**
+   Execute the main script to perform job scraping, resume matching, and analysis:
+
+   python main.py
+   
 
 ## Project Structure
-
-job_scraper/
-├── config.py
-├── data.db
-├── main.py
-├── requirements.txt
-├── resume.txt
-├── database/
-├── docs/
-├── logs/
-├── output/
-├── scripts/
-└── utils/
-
-- **config.py:** Contains configuration settings and API keys.
-- **main.py:** Orchestrates the entire pipeline.
-- **scripts/**: Houses modules for job scraping, TF-IDF and SBERT parsing, and analysis.
-- **database/**: Includes database management and schema setup scripts.
-- **docs/**: Contains project documentation.
-- **logs/** & **output/**: Used for log files and generated visualizations (e.g., charts).
+```
+BuffJobMatch/
+├── README.md              # Project overview and instructions
+├── config.py              # Configuration and API keys
+├── data.db                # SQLite database for storing job data
+├── main.py                # Orchestrates the job scraping and analysis pipeline
+├── requirements.txt       # Python dependencies
+├── resume.txt             # Sample resume file for matching
+├── database/              # Database management modules
+├── docs/                  # Additional project documentation
+├── logs/                  # Log files for debugging and performance tracking
+├── output/                # Generated reports and visualizations
+├── scripts/               # All pipeline scripts (job scraping, parsing, analysis, etc.)
+└── utils/                 # Utility modules (database, logging, etc.)
+```
 
 ## Future Enhancements
-- **Sector Classification:** Integrate the YFinance API to fetch and store company sector information.
-- **Forecasting:** Implement ARIMA-based models using historical data to predict future job trends.
-- **Visualization:** Build an interactive Streamlit dashboard to display job trends, similarity scores, and forecasts.
+- **Sector Classification:** Integrate the YFinance API to automatically categorize job postings by finance sub-sector.
+- **Enhanced Forecasting:** Develop and integrate ARIMA models to predict job market trends.
+- **Interactive Dashboard:** Create a Streamlit-based dashboard for real-time data exploration and visualization.
+- **Extended Analytics:** Incorporate additional metrics and comparative analysis to further aid career decision-making.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
