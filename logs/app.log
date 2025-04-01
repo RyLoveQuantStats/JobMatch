@@ -198,3 +198,13 @@ NameError: name 'SentenceTransformer' is not defined
 2025-04-01 15:26:11,923 - sentence_transformers.SentenceTransformer - WARNING - No sentence-transformers model found with name yiyanghkust/finbert-tone. Creating a new one with mean pooling.
 2025-04-01 15:36:55,796 - root - INFO - Computed FinBERT similarity scores for 2201 jobs.
 2025-04-01 15:36:56,811 - root - INFO - Updated FinBERT similarity scores for 2201 jobs.
+2025-04-01 15:42:40,104 - root - INFO - Table 'parser_results' created or already exists.
+2025-04-01 15:42:56,103 - root - INFO - Saved 10 TF-IDF parser results for job_id 59.
+2025-04-01 15:42:56,168 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 15:42:56,168 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-04-01 15:42:58,838 - root - INFO - Saved 10 SBERT parser results for job_id 53.
+2025-04-01 15:42:58,846 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 15:42:58,846 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: yiyanghkust/finbert-tone
+2025-04-01 15:42:59,462 - sentence_transformers.SentenceTransformer - WARNING - No sentence-transformers model found with name yiyanghkust/finbert-tone. Creating a new one with mean pooling.
+2025-04-01 15:43:07,385 - root - INFO - Saved 10 FinBERT parser results for job_id 2599.
+2025-04-01 15:43:14,308 - root - INFO - Validation complete.

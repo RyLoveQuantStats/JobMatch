@@ -27,7 +27,7 @@ PARSER_RESULTS_SQL = """
 CREATE TABLE IF NOT EXISTS parser_results (
     result_id INTEGER PRIMARY KEY AUTOINCREMENT,
     job_id INTEGER,
-    parser_type TEXT,         -- 'TF-IDF' or 'SBERT'
+    parser_type TEXT,         -- 'TF-IDF', 'SBERT', or 'FinBERT'
     keyword TEXT,
     ranking INTEGER,          -- 1 to 10
     score REAL,
@@ -80,7 +80,7 @@ def load_job_data(db_file):
     conn = sqlite3.connect(db_file)
     try:
         query = """
-            SELECT job_id, title, company, description, similarity_score, similarity_score_sbert
+            SELECT job_id, title, company, description, similarity_score, similarity_score_sbert, similarity_score_fbert
             FROM jobs
         """
         df = pd.read_sql_query(query, conn)
@@ -97,7 +97,7 @@ def preprocess(text):
     return re.sub(r'[\W_]+', ' ', text)
 
 # ---------------------
-# TF-IDF Analysis
+# TF‑IDF Analysis
 # ---------------------
 def compute_tfidf_details(resume_text, job_text):
     """
@@ -113,7 +113,6 @@ def compute_tfidf_details(resume_text, job_text):
     contributions = resume_vec * job_vec
     features = vectorizer.get_feature_names_out()
     sorted_idx = np.argsort(contributions)[::-1]
-    # Collect unique keywords (they will be unique since features are unique)
     top_keywords = [(features[i], contributions[i]) for i in sorted_idx if contributions[i] > 0][:10]
     return similarity, top_keywords
 
@@ -148,20 +147,26 @@ def analyze_sbert_contributions(resume_text, job_text, model_name="all-MiniLM-L6
 # Visualization Functions
 # ---------------------
 def plot_histograms(df):
-    """Generate histograms for the TF-IDF and SBERT similarity scores."""
+    """Generate histograms for the TF‑IDF, SBERT, and FinBERT similarity scores."""
     print("Basic Statistics:")
-    print(df[['similarity_score', 'similarity_score_sbert']].describe())
+    print(df[['similarity_score', 'similarity_score_sbert', 'similarity_score_fbert']].describe())
 
     plt.figure(figsize=(12,5))
-    plt.subplot(1,2,1)
+    plt.subplot(1,3,1)
     sns.histplot(df['similarity_score'].dropna(), kde=True, color='blue')
     plt.title("TF‑IDF Score Distribution")
     plt.xlabel("TF‑IDF Score")
 
-    plt.subplot(1,2,2)
+    plt.subplot(1,3,2)
     sns.histplot(df['similarity_score_sbert'].dropna(), kde=True, color='green')
     plt.title("SBERT Score Distribution")
     plt.xlabel("SBERT Score")
+
+    plt.subplot(1,3,3)
+    sns.histplot(df['similarity_score_fbert'].dropna(), kde=True, color='red')
+    plt.title("FinBERT Score Distribution")
+    plt.xlabel("FinBERT Score")
+    
     plt.tight_layout()
     plt.savefig("output/similarity_histograms.png")
     plt.show()
@@ -170,33 +175,33 @@ def plot_histograms(df):
 # Baseline Calculation
 # ---------------------
 def compute_baselines(df):
-    """Compute recommended baseline thresholds (75th percentile) for both models."""
+    """Compute recommended baseline thresholds (75th percentile) for all models."""
     tfidf_base = np.percentile(df['similarity_score'].dropna(), 75)
     sbert_base = np.percentile(df['similarity_score_sbert'].dropna(), 75)
+    fbert_base = np.percentile(df['similarity_score_fbert'].dropna(), 75)
     print("\nRecommended Baseline Thresholds:")
     print(f" - TF‑IDF: {tfidf_base:.4f}")
     print(f" - SBERT:  {sbert_base:.4f}")
-    return tfidf_base, sbert_base
+    print(f" - FinBERT: {fbert_base:.4f}")
+    return tfidf_base, sbert_base, fbert_base
 
 # ---------------------
 # Bar Chart of Top 10 Words from Each Model
 # ---------------------
 def plot_top10_keywords(tfidf_keywords, sbert_tokens):
     """
-    Show all top 10 words from TF-IDF and top 10 tokens from SBERT in a single bar chart.
-    We'll do an outer merge on the 'word' to compare their scores side by side.
+    Show top 10 words from TF‑IDF and top 10 tokens from SBERT in a single bar chart.
+    We merge the two sets on 'word' to compare their scores side by side.
     """
     df_tfidf = pd.DataFrame(tfidf_keywords, columns=['word', 'tfidf_score'])
     df_sbert = pd.DataFrame(sbert_tokens, columns=['word', 'sbert_score'])
 
-    # Merge outer on 'word'
+    # Outer merge on 'word'
     df_merge = pd.merge(df_tfidf, df_sbert, on='word', how='outer')
     df_merge.set_index('word', inplace=True)
 
-    # Sort by highest TF-IDF or SBERT (just for a consistent display)
     df_merge.sort_values(by=['tfidf_score','sbert_score'], ascending=False, inplace=True, na_position='last')
 
-    # Plot as bar chart
     df_merge.plot(kind='bar', figsize=(10,6))
     plt.title("Top 10 TF‑IDF vs SBERT Keywords")
     plt.ylabel("Score")
@@ -212,7 +217,7 @@ def deep_dive(df, resume_path):
     with open(resume_path, 'r', encoding='utf-8') as f:
         resume_text = f.read()
     
-    # Deep dive for TF-IDF
+    # Deep dive for TF‑IDF
     top_tfidf = df.sort_values("similarity_score", ascending=False).iloc[0]
     print("\n--- Deep Dive: Top TF‑IDF Matching Job ---")
     print(f"Job ID: {top_tfidf['job_id']}, Title: {top_tfidf['title']}, Company: {top_tfidf['company']}")
@@ -223,8 +228,6 @@ def deep_dive(df, resume_path):
     print("Top contributing keywords (TF‑IDF):")
     for word, contrib in tfidf_keywords:
         print(f"  {word}: {contrib:.4f}")
-    
-    # Save TF-IDF results into database.
     save_parser_results(DATABASE_FILE, top_tfidf['job_id'], "TF-IDF", tfidf_sim, tfidf_keywords)
     
     # Deep dive for SBERT
@@ -237,12 +240,24 @@ def deep_dive(df, resume_path):
     print("Top contributing tokens from resume (SBERT, unique):")
     for token, score in sbert_tokens:
         print(f"  {token}: {score:.4f}")
-    
-    # Save SBERT results into database.
     overall_sbert = top_sbert['similarity_score_sbert']
     save_parser_results(DATABASE_FILE, top_sbert['job_id'], "SBERT", overall_sbert, sbert_tokens)
 
-    # Plot bar chart with all top 10 keywords from both methods
+    # Deep dive for FinBERT
+    top_fbert = df.sort_values("similarity_score_fbert", ascending=False).iloc[0]
+    print("\n--- Deep Dive: Top FinBERT Matching Job ---")
+    print(f"Job ID: {top_fbert['job_id']}, Title: {top_fbert['title']}, Company: {top_fbert['company']}")
+    print("Description (first 500 chars):")
+    print(top_fbert['description'][:500] + "...")
+    # For FinBERT, use its own model for token analysis
+    fbert_tokens = analyze_sbert_contributions(resume_text, top_fbert['description'], model_name="yiyanghkust/finbert-tone")
+    print("Top contributing tokens from resume (FinBERT, unique):")
+    for token, score in fbert_tokens:
+        print(f"  {token}: {score:.4f}")
+    overall_fbert = top_fbert['similarity_score_fbert']
+    save_parser_results(DATABASE_FILE, top_fbert['job_id'], "FinBERT", overall_fbert, fbert_tokens)
+
+    # Plot combined bar chart of top keywords from TF‑IDF and SBERT
     plot_top10_keywords(tfidf_keywords, sbert_tokens)
 
 def deep_dive_and_save(df, resume_path):
@@ -260,13 +275,13 @@ def run_validation():
         return
     resume_path = os.path.join(os.getcwd(), "resume.txt")
 
-    # Plot only histograms (scatter plot removed)
+    # Plot histograms including FinBERT
     plot_histograms(df)
 
     # Perform deep dive and save results
     deep_dive_and_save(df, resume_path)
 
-    # Compute baseline thresholds
+    # Compute baseline thresholds for all models
     compute_baselines(df)
 
     logger.info("Validation complete.")
