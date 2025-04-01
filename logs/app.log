@@ -132,3 +132,69 @@
 2025-03-30 13:18:37,126 - root - INFO - Column 'company_website' already exists.
 2025-03-30 13:18:37,134 - root - INFO - Found 2201 jobs to update.
 2025-03-30 13:20:44,638 - root - ERROR - Clearbit error for company 'Citadel Securities': {"messages":"The API is unreachable, please contact the API provider", "info": "Your Client (working) ---> Gateway (working) ---> API (not working)"}
+2025-04-01 15:02:34,104 - root - INFO - Added column similarity_score_fbert to jobs table.
+2025-04-01 15:02:34,649 - root - ERROR - Error updating FinBERT similarity scores: name 'SentenceTransformer' is not defined
+Traceback (most recent call last):
+  File "<stdin>", line 22, in update_finbert_similarity
+  File "<stdin>", line 8, in compute_finbert_similarity
+NameError: name 'SentenceTransformer' is not defined
+2025-04-01 15:03:48,906 - root - INFO - Column similarity_score_fbert already exists.
+2025-04-01 15:03:48,935 - root - ERROR - Error updating FinBERT similarity scores: name 'SentenceTransformer' is not defined
+Traceback (most recent call last):
+  File "<stdin>", line 22, in update_finbert_similarity
+  File "<stdin>", line 8, in compute_finbert_similarity
+NameError: name 'SentenceTransformer' is not defined
+2025-04-01 15:03:52,188 - root - INFO - Column similarity_score_fbert already exists.
+2025-04-01 15:03:52,214 - root - ERROR - Error updating FinBERT similarity scores: name 'SentenceTransformer' is not defined
+Traceback (most recent call last):
+  File "<stdin>", line 22, in update_finbert_similarity
+  File "<stdin>", line 8, in compute_finbert_similarity
+NameError: name 'SentenceTransformer' is not defined
+2025-04-01 15:04:12,840 - numexpr.utils - INFO - Note: NumExpr detected 20 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 16.
+2025-04-01 15:04:12,840 - numexpr.utils - INFO - NumExpr defaulting to 16 threads.
+2025-04-01 15:04:15,660 - root - INFO - Column similarity_score_fbert already exists.
+2025-04-01 15:04:15,685 - root - ERROR - Error updating FinBERT similarity scores: name 'SentenceTransformer' is not defined
+Traceback (most recent call last):
+  File "<stdin>", line 22, in update_finbert_similarity
+  File "<stdin>", line 8, in compute_finbert_similarity
+NameError: name 'SentenceTransformer' is not defined
+2025-04-01 15:06:12,366 - root - INFO - Column similarity_score_fbert already exists.
+2025-04-01 15:06:12,929 - root - ERROR - Error updating FinBERT similarity scores: name 'SentenceTransformer' is not defined
+Traceback (most recent call last):
+  File "<stdin>", line 22, in update_finbert_similarity
+  File "<stdin>", line 8, in compute_finbert_similarity
+NameError: name 'SentenceTransformer' is not defined
+2025-04-01 15:06:29,485 - root - INFO - Column similarity_score_fbert already exists.
+2025-04-01 15:06:29,505 - root - ERROR - Error updating FinBERT similarity scores: name 'SentenceTransformer' is not defined
+Traceback (most recent call last):
+  File "<stdin>", line 22, in update_finbert_similarity
+  File "<stdin>", line 8, in compute_finbert_similarity
+NameError: name 'SentenceTransformer' is not defined
+2025-04-01 15:09:08,934 - root - INFO - Column similarity_score_fbert already exists.
+2025-04-01 15:09:09,561 - root - ERROR - Error updating FinBERT similarity scores: name 'SentenceTransformer' is not defined
+Traceback (most recent call last):
+  File "<stdin>", line 22, in update_finbert_similarity
+  File "<stdin>", line 8, in compute_finbert_similarity
+NameError: name 'SentenceTransformer' is not defined
+2025-04-01 15:09:47,983 - root - INFO - Column similarity_score_fbert already exists.
+2025-04-01 15:09:48,002 - root - ERROR - Error updating FinBERT similarity scores: name 'SentenceTransformer' is not defined
+Traceback (most recent call last):
+  File "<stdin>", line 22, in update_finbert_similarity
+  File "<stdin>", line 8, in compute_finbert_similarity
+NameError: name 'SentenceTransformer' is not defined
+2025-04-01 15:11:48,316 - root - INFO - Column similarity_score_fbert already exists.
+2025-04-01 15:11:48,821 - root - ERROR - Error updating FinBERT similarity scores: name 'SentenceTransformer' is not defined
+Traceback (most recent call last):
+  File "<stdin>", line 22, in update_finbert_similarity
+  File "<stdin>", line 8, in compute_finbert_similarity
+NameError: name 'SentenceTransformer' is not defined
+2025-04-01 15:12:28,669 - root - INFO - Column similarity_score_fbert already exists.
+2025-04-01 15:12:28,699 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 15:12:28,700 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: yiyanghkust/finbert-tone
+2025-04-01 15:12:28,809 - sentence_transformers.SentenceTransformer - WARNING - No sentence-transformers model found with name yiyanghkust/finbert-tone. Creating a new one with mean pooling.
+2025-04-01 15:26:11,757 - root - INFO - Column similarity_score_fbert already exists.
+2025-04-01 15:26:11,790 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-04-01 15:26:11,790 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: yiyanghkust/finbert-tone
+2025-04-01 15:26:11,923 - sentence_transformers.SentenceTransformer - WARNING - No sentence-transformers model found with name yiyanghkust/finbert-tone. Creating a new one with mean pooling.
+2025-04-01 15:36:55,796 - root - INFO - Computed FinBERT similarity scores for 2201 jobs.
+2025-04-01 15:36:56,811 - root - INFO - Updated FinBERT similarity scores for 2201 jobs.
